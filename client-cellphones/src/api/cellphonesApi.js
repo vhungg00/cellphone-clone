@@ -174,6 +174,7 @@ const cellphonesApi = {
 
     configPaypal: async () => {
         let res = await axiosCreate().get(API_ENDPOINT.PAYPAL_CONFIG);
+        console.log('res1321: ', res);
         return res;
     },
     getOrderDetail: async (id) => {
