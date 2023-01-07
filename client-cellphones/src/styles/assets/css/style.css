@@ -6492,11 +6492,6 @@ p.checkout-coupon input[type="text"]:focus {
   object-fit: cover;
 }
 
-body {
-  background: #000;
-  color: #000;
-}
-
 .swiper {
   width: 100%;
   height: 300px;
