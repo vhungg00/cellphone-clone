@@ -12,6 +12,7 @@ export const ConnectSocket = (server) => {
   });
   // khi client connect to server
   io.on("connection", (socket) => {
+    io.removeAllListeners();
     console.log(socket.id, "connected");
     socket.on("join_conversation", (idUser) => {
       ConversationModel.findOne({ idUser }).then((conversation) => {
