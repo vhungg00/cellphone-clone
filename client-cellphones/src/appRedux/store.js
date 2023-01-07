@@ -3,7 +3,7 @@ import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 
-import authReducer from '~/appRedux/reducerSlice/isAuthSlice';
+import authReducer from './reducerSlice/isAuthSlice';
 import cateReducer from '~/appRedux/reducerSlice/cateSlice';
 import prdReducer from '~/appRedux/reducerSlice/productSlice';
 import cartReducer from '~/appRedux/reducerSlice/cartSlice';
