@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 import { Provider } from "react-redux";
-import store from "~/appRedux/store";
+import store from "./appRedux/store";
 import "antd/dist/antd.css";
 import "leaflet/dist/leaflet.css";
 import GlobalStyles from "./components/GlobalStyles";
