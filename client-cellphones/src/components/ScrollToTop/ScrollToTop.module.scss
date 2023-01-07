@@ -1,0 +1,28 @@
+.backToTop {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    border-radius: 10px;
+    background: rgba(215,0,24,.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 10%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    color: #fff;
+    text-decoration: none;
+    position: fixed;
+    bottom: 110px;
+    right: calc(50% - 600px);
+    z-index: 100;
+    border: 0;
+    cursor: pointer;
+    svg {
+        fill: #fff;
+    }
+    strong {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,41 @@
+.boxReview {
+    border: var(--border-boxReview);
+    border-radius: 0.8rem;
+    padding: 0.8rem;
+}
+
+.ReviewWrapper {
+    
+}
+.ReviewWrapper h6 {
+    color: #363636;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: start;
+    padding: 1.2rem 0.6rem;
+    justify-content: s;
+}
+
+.title {
+    color: #363636;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: start;
+    padding: 1.2rem 0.6rem;
+}
+
+.boxReview form {
+    text-align: start;
+    select,
+    textarea {
+        border: 1px solid #e5e7eb !important;
+    }
+    button:disabled {
+        opacity: 0.6;
+    }
+}
+.login-link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #1890ff;
+}

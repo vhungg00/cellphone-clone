@@ -1,0 +1,16 @@
+
+
+.layout{
+    display: flex;
+    height: 100vh;
+}
+.layout__content{
+    margin-left: 300px;
+    min-height: 100vh;
+    flex-grow: 1;
+    background: #eee;
+}
+.layout__content-main{
+    position: relative;
+    background: #eee;
+}

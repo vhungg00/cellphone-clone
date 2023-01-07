@@ -1,0 +1,33 @@
+.breadcrumb__wrapper.affix {
+  position: fixed;
+  top: 94px;
+  left: 0;
+  z-index: 30;
+}
+
+.active {
+  color: #fcb700 !important;
+}
+
+.breadcrumb__wrapper {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 10%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  z-index: 99;
+  overflow: hidden;
+}
+
+.breadcrumb__box {
+  margin-bottom: unset !important;
+}
+
+a[href="/"]:hover {
+  color: #fcb700;
+  text-decoration: underline;
+}
+.icon_home {
+  margin-right: 0.4rem;
+}

@@ -1,0 +1,225 @@
+.Wrapper {
+  height: calc(100vh - 5rem);
+  border: 1px solid #dedede;
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: start;
+  border-bottom: 1px solid #dedede;
+  padding: 0.6rem;
+  color: #6b6b6b;
+  p {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+  }
+}
+.Appchat {
+  display: flex;
+  border-bottom: 1px solid #dedede;
+}
+
+.Contact {
+  width: 28rem;
+  height: calc(100vh - 10rem);
+  overflow-y: overlay;
+  background-color: #fff;
+  border-right: 1px solid #dedede;
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #a6a6a6;
+    border-radius: 2rem;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+  }
+}
+
+.item {
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  height: 4.8rem;
+  cursor: pointer;
+  margin-bottom: 0.6rem;
+  &:hover {
+    transition: linear 0.2s;
+    background-color: #eee;
+  }
+}
+.active {
+  background-color: #dedede;
+}
+.avatar {
+  min-width: 4rem;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+  background: rgb(66, 86, 128);
+  border-radius: 50%;
+}
+.content {
+  margin-left: 0.6rem;
+}
+.name {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0;
+  color: #373535;
+  text-align: left;
+}
+.lastmessage {
+  font-size: 1.2rem;
+  overflow-y: hidden;
+  color: #6b6b6b;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.AdBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.AdHeader {
+  padding: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.8rem;
+  border-bottom: 1px solid #dedede;
+}
+.Adname {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.ListMessage {
+  flex-grow: 1;
+  padding: 0.5rem;
+  padding-bottom: 2rem;
+  overflow-y: overlay;
+  background-color: #fff;
+  .loading {
+    display: flex;
+    justify-content: center;
+    span {
+      font-size: 1.2rem;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #a6a6a6;
+    border-radius: 2rem;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+  }
+}
+.message {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: 1rem;
+  span {
+    font-size: 1rem;
+  }
+  p {
+    background: #dedede;
+    font-size: 1.3rem;
+    max-width: 200px;
+    padding: 0.4rem 1.6rem;
+    margin-top: 0.2rem;
+    border-radius: 20px;
+    line-height: 1.3;
+    text-align: left;
+  }
+}
+.me {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  span {
+    font-size: 1rem;
+  }
+}
+.me p {
+  background: #1890ff;
+  color: #fff;
+}
+
+.formWrapper {
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+
+  border-top: 1px solid #eee;
+  padding: 0.6rem;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+  }
+  form .form-control {
+    font-size: 1.2rem !important;
+    border: 1px solid #dedede;
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+  }
+  form > button {
+    background-color: #d69c00;
+    padding: 0.9rem;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 0.2rem;
+    display: flex;
+    justify-content: center;
+    p{
+      color: #fff;
+    }
+    svg {
+      margin-top: 1rem;
+      margin-right: .4rem;
+    }
+    &:hover {
+      opacity: 0.6;
+      transition: linear 0.2s;
+    }
+  }
+}
+
+.Loading {
+  color: #fff;
+}
+
+.loading {
+  animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: translateY(-50%) rotate(0);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}

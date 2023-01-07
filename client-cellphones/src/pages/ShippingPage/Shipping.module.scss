@@ -1,0 +1,369 @@
+.wrapper {
+    width: 60rem;
+    max-width: calc(100% - 0.8rem);
+    height: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    margin-top: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content {
+    margin: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 10%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    padding: 10px;
+    position: relative;
+    h4 {
+        text-align: start;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #333;
+    }
+}
+
+
+.back {
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    &:hover p {
+        text-decoration: underline;
+        transition: linear .2s;
+    }
+    p {
+        font-weight: 600;
+        color: #d69c00;
+        font-size: 1.6rem;
+    }
+    span svg {
+        fill: #d69c00;
+    }
+    
+}
+
+
+.choose_pay {
+    padding: 1.6rem;
+    h4 {
+        text-align: center;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        color: #000;
+    }
+}
+
+.choose {
+    margin: 1.6rem 0;
+    display: flex;
+    justify-content: space-between;
+    button {
+        padding: 1.2rem;
+        border-radius: 0.4rem;
+        border: 1px solid #ccc;
+        width: 40%;
+        font-weight: 600;
+        color: #288ad6;
+    }
+    .active {
+        border-color: #d69c00;
+        color: #d69c00;
+    }
+}
+
+.customer_order {
+    border-radius: 0.4rem;
+    height: 4.4rem;
+    background-color: #d69c00;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    :hover {
+        opacity: 0.8;
+        transition: linear 0.2s;
+    }
+    .btn-submit {
+        text-transform: uppercase;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.vnpay{
+    border: 1px solid #333;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+
+
+// --------------------- --------------------------------
+.order-page{
+    max-width: 600px;
+    width: 600px;
+    background: #eee;
+
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,0%); */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    
+}
+.customer,.choose-pay{
+    width: 100%;
+    margin-top: 1rem;
+}
+.address{
+    width: 100%;
+    margin-top: .5rem;
+}
+.order-page h4{
+    text-align: left;
+    padding-left: .5rem;
+    margin: 0;
+}
+.form-customer, .choose{
+    display: flex;
+}
+.order-page input, textarea{
+    width: 100%;
+    outline: none;
+    border: 1px solid #eee;
+    padding: .5rem 1rem;
+    margin: .5rem;
+    font-size: 16px;
+}
+
+.choose-pay button{
+    width: 100%;
+    outline: none;
+    border: 1px solid #eee;
+    padding: .5rem 1rem;
+    margin: .5rem;
+    font-size: 16px;
+
+    background: white;
+    cursor: pointer;
+}
+.choose-pay .active{
+    border: 1px solid #e11b1e;
+    color: #e11b1e;
+}
+.paypal img{
+    margin: 1rem auto;
+    width: 50%;
+    height: 100%;
+}
+
+
+
+
+.address-form{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.province{
+    position: relative;
+    width: 50%;
+    padding: 0 .5rem;
+    margin-top: 1rem;
+}
+.province button{
+    width: 100%;
+    outline: none;
+    border: 1px solid #eee;
+    font-size: 16px;
+    padding: .5rem 1rem;
+    background: white;
+    color: #288ad6;
+    cursor: pointer;
+
+    text-align: left;
+}
+.province button::after{
+    content: "";
+    border-top: 6px solid #288ad6;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+
+    position: absolute;
+    right: 1rem;
+    top: 18px;
+}
+.province .active::after{
+    transform: rotate(180deg);
+}
+
+.select{
+    background: white;
+    position: absolute;
+    top: 110%;
+    min-width: 280px;
+
+    z-index: 11;
+}
+.select-list{
+    display: flex;
+    width: 100%;
+    max-height: 190px;
+    overflow-y: scroll;
+
+    z-index: 11;
+    padding: 1rem;
+    border: 1px solid #eee;
+}
+.select-list aside{
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+
+    cursor: pointer;
+}
+.select-list aside span{
+    width: 50%;
+    background: white;
+    color: #5897fb;
+    text-align: left;
+
+    padding: 6px;
+}
+.select-list aside span:hover{
+    background: #5897fb;
+    color: white;
+}
+.province input{
+    margin: 0;
+}
+
+.customer-order{
+    width: 100%;
+    margin-top: 1rem;
+}
+.customer-order button{
+    font-size: 16px;
+    margin: 0 .5rem;
+    padding: 1rem 0;
+    width: 100%;
+    background: #e11b1e;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+.paypal{
+    padding: 0 .5rem;
+}
+.paypal-buttons{
+    margin-top: 1rem;
+}
+
+/* ----------- vnpay payment       */
+.payment-vnpay{
+    margin-top: .5rem;
+}
+.payment-vnpay button{
+    margin: 0 ;
+    height: 55px;
+    border: 1px solid #333;
+
+    font-weight: 500;
+}
+.payment-vnpay button:hover{
+    background: #eee;
+}
+#order-success{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+.order-success{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.order-success > span {
+    font-size: 50px;
+    color: limegreen;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid limegreen;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.order-success > p {
+    font-size: 30px;
+    
+}
+.order-success .links{
+    display: flex;
+    
+}
+.order-success .links a{
+    min-width: 200px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    margin-right: 1rem;
+    padding: .5rem 0;
+    color: #333;
+    border-radius: 26px;
+}
+.order-success .links a:hover{
+    background-color: #ddd;
+    transition: .3s;
+}
+@media screen and (max-width: 400px){
+    #order{
+        padding: 1rem;
+    }
+    .order-page{
+        position: relative;
+        width: 100%;
+    }
+    .form-order{
+        padding: 1rem;
+    }
+    .order-page input, textarea{
+        margin: 10px 0;
+    }
+    .order-page textarea{
+        margin:10px 0;
+    }
+}
+form button {
+    color:#d69c00;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
+}

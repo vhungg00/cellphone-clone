@@ -1,0 +1,21 @@
+#review{
+    
+}
+.review{
+
+}
+.review-title{
+    display: flex;
+    padding: 1rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: #6b6b6b;
+}
+.review-content{
+    padding: 0 1rem;
+}
+.review-content button{
+    margin-top: 1rem;
+    padding: .5rem 1rem ;
+    cursor: pointer;
+}

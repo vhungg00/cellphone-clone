@@ -1,0 +1,459 @@
+* {
+    box-sizing: border-box;
+}
+
+.detail{
+    width: 80%;
+    margin: auto;
+    padding-top: 1rem;
+}
+.detail-title{
+    text-align: left;
+    padding: .5rem 0;
+}
+.detail-info{
+    display: flex;
+}
+.detail-info-slide-image {
+    border: 1px solid #eee;
+    padding: 1rem 0;
+}
+.detail-info-slide-image img{
+    max-width: 350px;
+}
+.detail-info-right {
+    padding-left: 1rem;
+}
+
+.detail-info-right-price {
+    background-color: #eee;
+    border-radius: 7px;
+    padding: 1rem;
+}
+.detail-intro table{
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    border: 1px solid #eee
+}
+.detail-info-slide, .detail-info-right, .about-product{
+    width: calc(75%/2);
+}
+.price-box {
+    display: flex;
+    line-height: 30px;
+}
+
+.saleprice {
+    font-weight: 700;
+    color: #e11b1e;
+    font-size: 20px;
+    margin-right: 1rem;
+}
+
+.old-price {
+    color: #444;
+    display: flex;
+}
+
+.old-price .price {
+    text-decoration: line-through;
+    color: #444;
+}
+
+.detail-info {
+    font-weight: 700;
+    font-size: 12px;
+    color: #444;
+}
+
+.detail-info-right-buy-now a {
+    background: linear-gradient(#f52f32, #e11b1e);
+    border: solid 1px #e11b1e;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 5px;
+    line-height: 18px;
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.detail-info-right-buy-now a:hover {
+    background: #fff;
+    color: #e11b1e;
+    text-decoration: none;
+}
+
+.detail-info-right-buy-installment {
+    display: flex;
+}
+
+.detail-info-right-buy-installment a {
+    background: #277cea;
+    border: solid 1px #1d72e0;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 5px;
+    line-height: 18px;
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.detail-info-right-buy-installment a:hover {
+    background: #fff;
+    color: #277cea;
+    text-decoration: none;
+}
+
+.detail-info-right-buy-installment a:nth-child(2) {
+    margin-left: 5px;
+}
+
+
+/* detail intro */
+
+.detail-intro {
+    border: 1px solid #ddd;
+}
+
+.detail-intro-title {
+    text-align: center;
+    background: #f9faf9;
+}
+
+.detail-intro-title span {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 50px;
+    color: #0a263c;
+}
+
+.detail-into table {
+    width: 100%;
+}
+
+.detail-into table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+.detail-intro-tskt tr {
+    display: table-row;
+}
+
+.detail-intro-tskt td {
+    padding: 0.5rem;
+    border-bottom: solid 1px #eee;
+    font-size: 12px;
+}
+
+.detail-intro-tskt td:nth-child(2) {
+    font-weight: 700;
+}
+
+.ant-rate-star-first svg{
+    font-size: 30px;
+}
+
+
+/* rate star */
+.rate{
+    border: 1px solid #eee;
+    padding: 1.5rem 0;
+}
+.rate-star-title{
+    display: flex;
+    font-size: 23px;
+    padding: 1rem 0;
+}
+.thongke span{
+    display: flex;
+    font-size: 14px;
+}
+.thongke{
+    display: flex;
+    align-items: center;
+}
+.numstar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.star-average{
+    margin-bottom: 0;
+}
+.percent{
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+.guidanhgia{
+    padding: 0.5rem 1rem;
+    background: orange;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.ant-rate-star-full svg{
+    color: orange;
+}
+.rate-send{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rate-send textarea{
+    width: 64%;
+    height: 100px;
+    padding: 1rem;
+    margin: 0 1rem;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+
+
+/* comment */
+.comment{
+    margin-top: 1rem;
+}
+.comment-area textarea{
+    padding: 10px;
+    width: 1000px;
+    height: 112px;
+    outline: none;
+    border: 1px solid #eee;
+}
+.comment-send {
+    margin-top: 1rem;
+}
+.comment-send button{
+    padding: 5px 25px;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    border: 1px solid #e11b1e;
+    border-radius: 4px;
+    background: #e11b1e;
+    margin: 0;
+
+    outline: none;
+    cursor: pointer;
+}
+
+.all-comment{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.all-comment-info{
+    display: flex;
+}
+
+.all-comment-info span{
+    background: #e11b1e;
+    font-weight: 500;
+    padding: .1rem .2rem;
+    color: white;
+
+    line-height: 25px;
+}
+.all-comment-info-name{
+    width: 25px;
+    height: 25px;
+    background: #ddd;
+    margin-right: 7px;
+    text-align: center;
+    color: #777;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 26px;
+    font-weight: 600;
+}
+
+.all-comment-info-name.admin{
+    background: none;
+}
+.all-comment-info-name.admin img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.all-comment-content, .all-comment-more{
+    display: flex;
+    margin-left: 2rem;
+    padding: 0.5rem 0;
+}
+.all-comment-more{
+    display: flex;
+    margin-left: 2rem;
+    padding: 0.3rem 0;
+}
+.all-comment-more-chat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-comment-more-chat p{
+    margin-bottom: 0;
+    color: #e11b1e;
+    margin-left: 1rem;
+}
+
+.all-comment-rep-list{
+    position: relative;
+    background: #eee;
+    width: calc(100% - 30px);
+    float: right;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    padding: 1rem;
+}
+.arrow-up {
+    position: absolute;
+    top: -6px;
+    left: 33px;
+    width: 10px;
+    height: 10px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 5px solid #eee;
+  }
+ 
+.all-comment-rep-list-item{
+    padding-top: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+.all-comment-rep-list-item:nth-child(1){
+    padding-top: 0;
+}
+
+
+/*--------  blog */
+#blog{
+    width: 100%;
+    margin-top: 1rem;
+}
+.blog{
+    width: 75%;
+}
+.blog-content{
+    position: relative;
+    height: 500px;
+    overflow:hidden;
+}
+.blog-content p{
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.5;
+
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 10px;
+}
+.blog-content h2{
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+.blog-content h3{
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: .5rem;
+}
+.blog-content strong{
+    font-weight: 700;
+}
+.blog-content img{
+    width: 100%;
+}
+.blog-showmore{
+    padding-top: 50px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    color: #d70018;
+    cursor: pointer;
+    background: linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0.91) 50%,#fff 55%);
+}
+
+
+.comment-status{
+    flex-grow: 1;
+    text-align: end;
+}
+.comment-status-pin span{
+    font-size: 25px;
+    color: #333333;
+    background: none;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1000px){
+    .detail{
+        width: 100%;
+        justify-content: center;
+        padding: 0 1rem;
+    }
+    .detail-info{
+        flex-direction: column;
+    }
+    .detail-info-slide, .detail-info-right, .about-product{
+        margin-top: 1rem;
+        width: calc(100%);
+        padding: 0 0.5rem;
+    }
+
+}
+@media screen and (max-width: 800px){
+    .detail{
+        width: 100%;
+        justify-content: center;
+        padding: 0 1rem;
+    }
+    .detail-info{
+        flex-direction: column;
+    }
+    .detail-info-slide, .detail-info-right, .about-product{
+        margin-top: 1rem;
+        width: calc(100%);
+        padding: 0 0.5rem;
+    }
+
+}
+@media screen and (max-width: 500px){
+    .detail{
+        padding: 0 0.2rem;
+    }
+    .detail-info-slide-image{
+        padding: 1rem 0;
+    }
+    .detail-info-slide-image img{
+        width: 270px;
+    }
+    .guidanhgia{
+        padding: 0.2rem 0.5rem;
+        border-radius: 30px;
+    }
+}

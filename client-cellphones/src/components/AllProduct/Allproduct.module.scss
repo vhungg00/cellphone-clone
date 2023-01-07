@@ -1,0 +1,41 @@
+
+.product_area {
+    margin-bottom: 1.6rem;
+    margin-top: 6rem;
+}
+.wrapper {
+    margin-top: 3.2rem;
+    margin-bottom: 1.6rem;
+}
+.pagination {
+    margin: 0 auto;
+}
+
+.box {
+
+}
+
+.filter {
+    margin-top: 2rem;
+    label {
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: start;
+        display: block;
+        margin-bottom: 1.4rem;
+    }
+    button {
+        margin-top: .8rem;
+        margin-bottom: 2.4rem;
+        padding: 0.2rem 1.2rem;
+        background-color: #fcb700;
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 600;
+        border-radius: 0.4rem;
+        &:hover {
+            opacity: 0.8;
+            transition: all .2s;
+        }
+    }
+}
