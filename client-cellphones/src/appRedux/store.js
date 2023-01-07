@@ -4,11 +4,11 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 
 import authReducer from './reducerSlice/isAuthSlice';
-import cateReducer from '~/appRedux/reducerSlice/cateSlice';
-import prdReducer from '~/appRedux/reducerSlice/productSlice';
-import cartReducer from '~/appRedux/reducerSlice/cartSlice';
-import orderReducer from '~/appRedux/reducerSlice/orderSlice';
-import chatReducer from '~/appRedux/reducerSlice/chatSlice';
+import cateReducer from './reducerSlice/cateSlice';
+import prdReducer from './reducerSlice/productSlice';
+import cartReducer from './reducerSlice/cartSlice';
+import orderReducer from './reducerSlice/orderSlice';
+import chatReducer from './reducerSlice/chatSlice';
 const rootReducer = combineReducers({
     auth: authReducer,
     cate: cateReducer,
