@@ -20,8 +20,8 @@ function CreateCategory() {
     e.preventDefault();
     let formData = new FormData();
     formData.append("name", data.name);
-    formData.append("name", data.slug);
-    formData.append("name", data.status);
+    formData.append("slug", data.slug);
+    formData.append("status", data.status);
     formData.append("image", image);
 
     e.target.reset();

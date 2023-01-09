@@ -5,7 +5,6 @@ const operations = <h4>HOTSALE</h4>;
 function Bessell() {
   const items = [
     { label: 'Điện thoại, Lap top, TV', key: 'item-1', children: <Accessory /> },
-    { label: 'Tab 2', key: 'item-2', children: 'Content 2' }
   ];
   return (
     <section className="best__sell pt-15 pb-40">

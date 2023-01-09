@@ -95,9 +95,6 @@
   }
 }
 
-.option-list {
-}
-
 .option-list-item {
   display: flex;
   align-items: center;
@@ -167,6 +164,12 @@
     opacity: 0.8;
     transition: linear 0.2s;
   }
+}
+
+.create_form p {
+  text-align: start;
+  margin-bottom: 2rem;
+  color: #d70018;
 }
 
 .select_wrapper {

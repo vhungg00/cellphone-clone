@@ -36,7 +36,7 @@ function Carousel({ sliderList }) {
     >
       <Slider {...settings} ref={ref}>
         {sliderList.map((slide) => (
-          <div className={cx("slider-item")} key={slide.id}>
+          <div className={cx("slider-item")} key={slide._id}>
             <a href="/" className={cx("item-link")}>
               {""}
             </a>

@@ -1,23 +1,21 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 import { Pagination } from 'antd';
 
-import Product from './Product';
 import Loading from '../Loading';
+import Product from './Product';
 
 import Breadcrumb from '../Breadcrumb';
 
+import { getAllProducts } from '~/appRedux/actions/productAction';
 import { handlePercentDiscount } from '~/untils';
 import FilterProduct from './FilterProduct';
-import { getAllProducts } from '~/appRedux/actions/productAction';
 
 import './Sale.css';
 
 import classNames from 'classnames/bind';
 import styles from './Allproduct.module.scss';
-import { useCallback } from 'react';
 const cx = classNames.bind(styles);
 
 function AllProduct() {
@@ -29,16 +27,16 @@ function AllProduct() {
 
     const products = useSelector(state => state.product.products)
     let loading = useSelector(state => state.product.isLoading)
-    const handleChangePage = useCallback(() => async (number) => {
+    const handleChangePage = async (number) => {
+        console.log('number:', number);
         await dispatch(getAllProducts("", number));
-    }, [dispatch])
-
-    useEffect(() => {
-        handleChangePage()
-        return () => {
-            return []
-        }
-    }, [handleChangePage])
+    }
+    // useEffect(() => {
+    //     handleChangePage()
+    //     return () => {
+    //         return []
+    //     }
+    // }, [dispatch])
    
     const temps = handlePercentDiscount(products)
 

@@ -44,6 +44,12 @@
     border-color: #fcb700 !important;
   }
 }
+.create_form p {
+    text-align: start;
+    margin-bottom: 2rem;
+    color: #d70018;
+}
+
 
 .inner form button {
     display: flex;
@@ -88,9 +94,6 @@
     }
 }
 
-.select_box {
-
-}
 .select {
     margin-bottom: 1rem;
   padding: 1.2rem 1rem;
@@ -192,9 +195,7 @@
 
 
 /* ----- create product */
-.admin-create{
 
-}
 .admin-create > span{
     display: flex;
     padding: 1rem;

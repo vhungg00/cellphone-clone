@@ -1,21 +1,19 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 
-import { Pagination } from "antd";
+import { AppstoreAddOutlined, ToolOutlined } from "@ant-design/icons";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
-import { AppstoreAddOutlined, ToolOutlined } from "@ant-design/icons";
+import { Pagination } from "antd";
 
+import { deleteProduct, getAllProducts } from "~/appRedux/actions/productAction";
 import Loading from "~/components/Loading";
 import { formatPrice } from "~/untils";
-import { deleteProduct, getAllProducts } from "~/appRedux/actions/productAction";
 
-import config from "~/config";
 import classNames from "classnames/bind";
+import config from "~/config";
 import styles from "./ProductList.module.scss";
-import { useCallback } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -29,17 +27,9 @@ function ProductList() {
   const current = useSelector((state) => state.product.current);
   let loading = useSelector((state) => state.product.isLoading);
 
-  const handleChangePage = useCallback(() => async (number) => {
+  const handleChangePage = async (number) => {
     await dispatch(getAllProducts("", number));
-}, [dispatch])
-
-useEffect(() => {
-    handleChangePage()
-    return () => {
-        return []
-    }
-}, [handleChangePage])
-
+  }
   const handleDelete = async (id) => {
     await dispatch(deleteProduct(id));
     await dispatch(getAllProducts());

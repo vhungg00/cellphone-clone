@@ -17,11 +17,10 @@ import { getCate } from "~/appRedux/actions/cateAction";
 const cx = classNames.bind(styles);
 
 function AdminCreate(props) {
-  const { register, handleSubmit } = useForm({ defaultValues: {} });
+  const { register, handleSubmit, formState: { errors },  } = useForm({ defaultValues: {} });
 
   const [image, setImage] = useState("");
   const [activeType, setActiveType] = useState("");
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -78,7 +77,6 @@ function AdminCreate(props) {
       <img src={item.img} alt={item.name}></img>
     </div>
   );
-
   const handleActiveType = (name) => {
     setActiveType(name);
   };
@@ -98,10 +96,17 @@ function AdminCreate(props) {
           onSubmit={handleSubmit(onSubmit)}
           encType="multipart/form-data"
         >
-          <input {...register("name")} placeholder="Name ..."></input>
-          <input {...register("slug")} placeholder="Slug ..."></input>
+          <input {...register("name")}
+           {...register("name", { required: "Vui lòng nhập trường này" })}
+           placeholder="Name ..."></input>
+           {errors.name && <p>{errors.name?.message}</p>}
+          <input {...register("slug", { required: "Vui lòng nhập trường này" })}
+           placeholder="Slug ..."></input>
+           {errors.slug && <p>{errors.slug?.message}</p>}
           <div className={cx("cate_item")}>
-            <select {...register("category")} className={cx("select")}>
+            <select {...register("category")}
+             {...register("name", { required: "Vui lòng nhập trường này" })}
+             className={cx("select")}>
               <option>Các danh mục sản phẩm</option>
               {cates &&
                 cates.length > 0 &&
@@ -109,6 +114,7 @@ function AdminCreate(props) {
                   <option key={cate._id} value={cate._id}>{cate.name}</option>
                 ))}
             </select>
+           {errors.name && <p>{errors.name?.message}</p>}
           </div>
           <input {...register("descriptions")} placeholder="Descriptions ..."></input>
           <input

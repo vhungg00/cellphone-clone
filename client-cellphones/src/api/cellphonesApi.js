@@ -19,7 +19,7 @@ const cellphonesApi = {
         return res;
     },
     deleteCategory: async (id) => {
-        let res = await axiosCreate().get(API_ENDPOINT.DELETE_CATEGORY, {
+        let res = await axiosCreate().delete(API_ENDPOINT.DELETE_CATEGORY, {
             params: {
                 id
             }
