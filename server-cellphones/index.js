@@ -18,6 +18,7 @@ import PaymentRouter from './routers/PaymentRouter.js'
 import SelectListrouter from './routers/SelectListRouter.js'
 import ListTypeProductRouter from './routers/ListTypeProductRouter.js'
 import CategoryRouter from './routers/CategoryRouter.js';
+import SliderRouter from './routers/SliderRouter.js';
 import { ConnectSocket } from './config/socket/socket.js';
 
 dotenv.config();
@@ -40,6 +41,7 @@ app.use('/api/v1/orders', OrderRouter)
 app.use('/api/v1/chat', ChatRouter)
 app.use('/api/v1/payment', PaymentRouter)
 app.use('/api/v1/selectList', SelectListrouter)
+app.use('/api/v1/slider', SliderRouter)
 app.use('/api/v1/typeList', ListTypeProductRouter)
 app.use('/api/v1/category', CategoryRouter)
 

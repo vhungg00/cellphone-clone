@@ -29,6 +29,7 @@ import PlaceOrderPage from "~/pages/PlaceOrderPage";
 import ProfilePage from "~/pages/ProfilePage";
 import Register from "~/pages/Register";
 import ShippingPage from "~/pages/ShippingPage";
+import AdSlider from "~/components/Admin/components/AdminSlider/AdSlider";
 
 const PrivateRoute = ({children}) =>  {
     const { data: authUser } = useSelector(state => state.auth.user);
@@ -62,7 +63,9 @@ const adminRoutes = [
     { id: 6, path: config.routesAdmin.order, component: OrderMain, privateRoute: PrivateRoute},
     { id: 7, path: config.routesAdmin.orderDetail, component: OrderDetailmain, privateRoute: PrivateRoute},
     // { id: 8, path: config.routesAdmin.appChat, component: AppChat, privateRoute: PrivateRoute},
-    { id: 9, path: config.routes.notFound, component: NotFound, privateRoute: PrivateRoute},
+    { id: 9, path: config.routesAdmin.slider, component: AdSlider, privateRoute: PrivateRoute},
+
+    { id: 10, path: config.routes.notFound, component: NotFound, privateRoute: PrivateRoute},
 ]
 export { clientRoutes, adminRoutes };
 

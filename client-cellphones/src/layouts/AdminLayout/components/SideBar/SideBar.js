@@ -1,4 +1,4 @@
-import { WechatOutlined } from "@ant-design/icons";
+import { FileImageOutlined, WechatOutlined } from "@ant-design/icons";
 import {
   AttachMoney,
   BarChart,
@@ -70,6 +70,15 @@ export default function SideBar() {
               <li className={cx("sidebarListItem")}>
                 <WechatOutlined className={cx("sidebarIcon")} />
                 App Chat
+              </li>
+            </NavLink>
+            <NavLink
+              to={config.routesAdmin.slider}
+              className={(nav) => cx("link", { active: nav.isActive })}
+            >
+              <li className={cx("sidebarListItem")}>
+                <FileImageOutlined className={cx("sidebarIcon")} />
+                Slider
               </li>
             </NavLink>
           </ul>

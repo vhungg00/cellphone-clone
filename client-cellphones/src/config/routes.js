@@ -26,5 +26,6 @@ const routesAdmin = {
     update: '/admin/product/update',
     order: '/admin/order',
     orderDetail: '/admin/order/:id',
+    slider: '/admin/slider',
 }
 export {routes, routesAdmin};

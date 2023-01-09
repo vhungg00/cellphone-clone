@@ -228,7 +228,24 @@ const cellphonesApi = {
     createChat: async (payload) => {
         let res = await axiosCreate().post(API_ENDPOINT.CREATE_CHAT, payload);
         return res;
+    },
+    getAllSlider: async (payload) => {
+        let res = await axiosCreate().get(API_ENDPOINT.GET_ALL_SLIDER)
+        return res;
+    },
+    createSlider: async (payload) => {
+        let res = await axiosCreate().post(API_ENDPOINT.CREATE_SLIDER, payload)
+        return res;
+    },
+    deleteSlider: async (id) => {
+        let res = await axiosCreate().delete(API_ENDPOINT.DELETE_SLIDER, {
+            params: {
+                id
+            }
+        })
+        return res;
     }
+
 }
 
 export default cellphonesApi;

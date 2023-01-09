@@ -40,7 +40,10 @@ export const API_ENDPOINT = {
   CREATE_CHAT: '/chat/save',
   CHAT_IDCONVERSATION : '/chat/message?idConversation=',
   CHAT_LIST: '/chat',
-
+  
+  GET_ALL_SLIDER: '/slider',
+  CREATE_SLIDER: '/slider/create',
+  DELETE_SLIDER: '/slider/delete/id',
 };
 
 export const RULES_ANTD = {

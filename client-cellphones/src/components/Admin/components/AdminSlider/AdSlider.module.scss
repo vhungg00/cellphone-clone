@@ -1,0 +1,57 @@
+.Wrapper {
+  width: 80%;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border-input);
+}
+.create-slider {
+  background: #fff;
+  padding: 1rem;
+}
+.create-slider > span {
+  display: flex;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b6b6b;
+  text-transform: uppercase;
+}
+.create-slider form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-slider form p {
+  text-align: start;
+  margin-bottom: 2rem;
+  color: #d70018;
+}
+.create-slider form input {
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border-input);
+  border-radius: 0.4rem;
+  font-size: 14px;
+  width: 100%;
+  &:focus-visible {
+    border-color: #fcb700 !important;
+  }
+}
+.create-slider form button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-radius: 1rem;
+
+  padding: 1rem 1rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #fcb700;
+  text-transform: uppercase;
+  &:hover {
+    opacity: 0.8;
+    transition: linear 0.2s;
+  }
+}
