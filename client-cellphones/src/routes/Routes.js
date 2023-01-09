@@ -8,9 +8,9 @@ import config from '~/config';
 import Admin from "~/pages/Admin";
 import Home from '~/pages/Home';
 
-import Login from '~/pages/Login';
 import CartPage from "~/pages/CartPage";
 import Category from '~/pages/Category';
+import Login from '~/pages/Login';
 
 import ProductList from "~/components/Admin/ProductList";
 import DetailProductPage from '~/pages/DetailProductPage';
@@ -20,16 +20,15 @@ import OrderPage from "~/pages/OrderPage";
 
 import AdminCreate from "~/components/Admin/components/AdminProduct/components/AdminCreate";
 import DataFilterProduct from "~/components/Admin/components/AdminProduct/DataFilterProduct";
+import { OrderMain } from "~/components/Admin/pages/Order";
+import OrderDetailmain from "~/components/Admin/pages/Order/OrderDetailmain";
+import NotFound from "~/pages/NotFound";
 import OrderScreen from "~/pages/OrderPage/OrderScreen";
 import PaymentPage from "~/pages/PaymentPage";
 import PlaceOrderPage from "~/pages/PlaceOrderPage";
 import ProfilePage from "~/pages/ProfilePage";
-import ShippingPage from "~/pages/ShippingPage";
-import NotFound from "~/pages/NotFound";
 import Register from "~/pages/Register";
-import { OrderMain } from "~/components/Admin/pages/Order";
-import OrderDetailmain from "~/components/Admin/pages/Order/OrderDetailmain";
-import AppChat from "~/components/Admin/components/AppChat";
+import ShippingPage from "~/pages/ShippingPage";
 
 const PrivateRoute = ({children}) =>  {
     const { data: authUser } = useSelector(state => state.auth.user);
@@ -50,7 +49,7 @@ const clientRoutes = [
     { id: 8, path: config.routes.allProduct, component: AllProduct},
     { id: 9, path: config.routes.payment, component: PaymentPage, privateRoute: PrivateRoute},
     { id: 10, path: config.routes.placeorder, component: PlaceOrderPage, privateRoute: PrivateRoute},
-    { id: 11, path: config.routes.order, component: OrderScreen, privateRoute: PrivateRoute},
+    { id: 11, path: config.routes.orderId, component: OrderScreen, privateRoute: PrivateRoute},
     { id: 12, path: config.routes.profile, component: ProfilePage, privateRoute: PrivateRoute},
     { id: 13, path: config.routes.notFound, component: NotFound},
 ]
@@ -62,7 +61,7 @@ const adminRoutes = [
     { id: 5, path: config.routesAdmin.create, component: AdminCreate, privateRoute: PrivateRoute},
     { id: 6, path: config.routesAdmin.order, component: OrderMain, privateRoute: PrivateRoute},
     { id: 7, path: config.routesAdmin.orderDetail, component: OrderDetailmain, privateRoute: PrivateRoute},
-    { id: 8, path: config.routesAdmin.appChat, component: AppChat, privateRoute: PrivateRoute},
+    // { id: 8, path: config.routesAdmin.appChat, component: AppChat, privateRoute: PrivateRoute},
     { id: 9, path: config.routes.notFound, component: NotFound, privateRoute: PrivateRoute},
 ]
 export { clientRoutes, adminRoutes };

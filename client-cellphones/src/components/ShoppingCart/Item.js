@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from "react-redux";
-import {
-  DeleteQtyProduct, DeleteToCart
-} from "../../actions/CartAction";
 
 import { CloseOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 
-import { formatPrice } from "~/untils";
 import { addCart, decrease, deteleCartItem } from "~/appRedux/actions/cartAction";
+import { formatPrice } from "~/untils";
 
 
 import classNames from "classnames/bind";
@@ -22,10 +19,6 @@ function Item({data}) {
   }
   const dispatch = useDispatch();
 
-  function handleDeleteProduct(product) {
-    const action = DeleteToCart(product);
-    dispatch(action);
-  }
 
   const handleAddProduct = async (data) =>{
     await dispatch(addCart(data));

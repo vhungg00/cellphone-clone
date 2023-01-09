@@ -32,7 +32,7 @@ const FilterMenu = () => {
 
   useEffect(() => {
     dispatch(getAllSelectProduct());
-  }, []);
+  }, [dispatch]);
 
   const showModal = (item) => {
     setValue("select", {
@@ -178,7 +178,7 @@ const FilterMenu = () => {
                     </div>
                   ))}
               </div>
-              <a onClick={handleAddOption}>
+              <a href="#/" onClick={handleAddOption}>
                 <p>Add options</p>
                 <PlusOutlined /> 
               </a>

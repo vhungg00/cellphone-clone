@@ -12,7 +12,7 @@ function Footer() {
                       <div className="footer__widget">
                         <div className="footer__widget-title mb-45">
                           <div className="footer__logo">
-                            <a href="index.html">
+                            <a href="#/">
                               <img
                                 src="assets/img/logo/logo-white.png"
                                 alt=""
@@ -35,10 +35,7 @@ function Footer() {
                               <li>
                                 <span>
                                   Dịa chỉ:{" "}
-                                  <a
-                                    target="_blank"
-                                    href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873"
-                                  >
+                                  <a href="#/">
                                     18A21 NGhĩa Tân - Cầu Giấy - Hà Nội
                                   </a>
                                 </span>
@@ -46,7 +43,7 @@ function Footer() {
                               <li>
                                 <span>
                                   Email:{" "}
-                                  <a href="#">
+                                  <a href="#/">
                                     <span
                                       className="__cf_email__"
                                     >
@@ -77,22 +74,22 @@ function Footer() {
                               <div className="footer__link">
                                 <ul>
                                   <li>
-                                    <a href="#"> Custom Service </a>
+                                    <a href="#/"> Custom Service </a>
                                   </li>
                                   <li>
-                                    <a href="#">F.A.Q.’s</a>
+                                    <a href="#/">F.A.Q.’s</a>
                                   </li>
                                   <li>
-                                    <a href="#">Ordering Tracking</a>
+                                    <a href="#/">Ordering Tracking</a>
                                   </li>
                                   <li>
-                                    <a href="#"> Contacts</a>
+                                    <a href="#/"> Contacts</a>
                                   </li>
                                   <li>
-                                    <a href="#">Events</a>
+                                    <a href="#/">Events</a>
                                   </li>
                                   <li>
-                                    <a href="#">Popular</a>
+                                    <a href="#/">Popular</a>
                                   </li>
                                 </ul>
                               </div>
@@ -108,22 +105,22 @@ function Footer() {
                               <div className="footer__link">
                                 <ul>
                                   <li>
-                                    <a href="#">Sitemap</a>
+                                    <a href="#/">Sitemap</a>
                                   </li>
                                   <li>
-                                    <a href="#">Privacy Policy</a>
+                                    <a href="#/">Privacy Policy</a>
                                   </li>
                                   <li>
-                                    <a href="#">Your Account</a>
+                                    <a href="#/">Your Account</a>
                                   </li>
                                   <li>
-                                    <a href="#">Advanced Search</a>
+                                    <a href="#/">Advanced Search</a>
                                   </li>
                                   <li>
-                                    <a href="#">Terms &amp; Condition</a>
+                                    <a href="#/">Terms &amp; Condition</a>
                                   </li>
                                   <li>
-                                    <a href="#"> Contact Us</a>
+                                    <a href="#/"> Contact Us</a>
                                   </li>
                                 </ul>
                               </div>
@@ -146,22 +143,22 @@ function Footer() {
                         <div className="footer__link">
                           <ul>
                             <li>
-                              <a href="#"> About us </a>
+                              <a href="#/"> About us </a>
                             </li>
                             <li>
-                              <a href="#">Delivery Information</a>
+                              <a href="#/">Delivery Information</a>
                             </li>
                             <li>
-                              <a href="#">Privacy Policy</a>
+                              <a href="#/">Privacy Policy</a>
                             </li>
                             <li>
-                              <a href="#">Discount</a>
+                              <a href="#/">Discount</a>
                             </li>
                             <li>
-                              <a href="#">Custom Service</a>
+                              <a href="#/">Custom Service</a>
                             </li>
                             <li>
-                              <a href="#">Terms &amp; Condition</a>
+                              <a href="#/">Terms &amp; Condition</a>
                             </li>
                           </ul>
                         </div>
@@ -177,22 +174,22 @@ function Footer() {
                         <div className="footer__link">
                           <ul>
                             <li>
-                              <a href="#">Terms Of Use</a>
+                              <a href="#/">Terms Of Use</a>
                             </li>
                             <li>
-                              <a href="#">Payment Methods</a>
+                              <a href="#/">Payment Methods</a>
                             </li>
                             <li>
-                              <a href="#">Shipping Guide</a>
+                              <a href="#/">Shipping Guide</a>
                             </li>
                             <li>
-                              <a href="#">Locations We Ship To</a>
+                              <a href="#/">Locations We Ship To</a>
                             </li>
                             <li>
-                              <a href="#">Estimated Delivery Time</a>
+                              <a href="#/">Estimated Delivery Time</a>
                             </li>
                             <li>
-                              <a href="#">Express</a>
+                              <a href="#/">Express</a>
                             </li>
                           </ul>
                         </div>
@@ -210,46 +207,46 @@ function Footer() {
               <div className="col-xl-12">
                 <div className="footer__links text-center">
                   <p>
-                    <a href="#">Air Conditioners</a>
-                    <a href="#">Audios &amp; Theaters</a>
-                    <a href="#">Car Electronics</a>
-                    <a href="#">Office Electronics</a>
-                    <a href="#">TV Televisions</a>
-                    <a href="#">Washing Machines</a>
+                    <a href="#/">Air Conditioners</a>
+                    <a href="#/">Audios &amp; Theaters</a>
+                    <a href="#/">Car Electronics</a>
+                    <a href="#/">Office Electronics</a>
+                    <a href="#/">TV Televisions</a>
+                    <a href="#/">Washing Machines</a>
                   </p>
                   <p>
-                    <a href="#">Cookware</a>
-                    <a href="#">Decoration</a>
-                    <a href="#">Furniture </a>
-                    <a href="#">Garden Tools</a>
-                    <a href="#">Garden Equipments</a>
-                    <a href="#">Powers And Hand Tools </a>
-                    <a href="#">Utensil &amp; Gadget </a>
-                    <a href="#">Printers</a>
-                    <a href="#">Projectors</a>
-                    <a href="#">Scanners</a>
-                    <a href="#">Store</a>
-                    <a href="#">Business</a>
+                    <a href="#/">Cookware</a>
+                    <a href="#/">Decoration</a>
+                    <a href="#/">Furniture </a>
+                    <a href="#/">Garden Tools</a>
+                    <a href="#/">Garden Equipments</a>
+                    <a href="#/">Powers And Hand Tools </a>
+                    <a href="#/">Utensil &amp; Gadget </a>
+                    <a href="#/">Printers</a>
+                    <a href="#/">Projectors</a>
+                    <a href="#/">Scanners</a>
+                    <a href="#/">Store</a>
+                    <a href="#/">Business</a>
                   </p>
                   <p>
-                    <a href="#">4K Ultra</a>
-                    <a href="#"> HD TVs </a>
-                    <a href="#">LED TVs</a>
-                    <a href="#">OLED TVs</a>
-                    <a href="#">Desktop</a>
-                    <a href="#">PC</a>
-                    <a href="#">Laptop</a>
-                    <a href="#">Smartphones</a>
-                    <a href="#">Tablet</a>
-                    <a href="#">Game Controller</a>
-                    <a href="#">Audio &amp; Video</a>
-                    <a href="#"> Wireless Speaker</a>
-                    <a href="#">Drone</a>
+                    <a href="#/">4K Ultra</a>
+                    <a href="#/"> HD TVs </a>
+                    <a href="#/">LED TVs</a>
+                    <a href="#/">OLED TVs</a>
+                    <a href="#/">Desktop</a>
+                    <a href="#/">PC</a>
+                    <a href="#/">Laptop</a>
+                    <a href="#/">Smartphones</a>
+                    <a href="#/">Tablet</a>
+                    <a href="#/">Game Controller</a>
+                    <a href="#/">Audio &amp; Video</a>
+                    <a href="#/"> Wireless Speaker</a>
+                    <a href="#/">Drone</a>
                   </p>
                 </div>
                 <div className="footer__download text-center">
                   <h4>Download The App - Get 30% Sale Coupon</h4>
-                  <a href="#" className="m-img">
+                  <a href="#/" className="m-img">
                     <img src="assets/img/icon/app-store.jpg" alt="" />
                   </a>
                 </div>
@@ -263,13 +260,13 @@ function Footer() {
               <div className="col-xl-6 col-lg-6">
                 <div className="footer__copyright-text">
                   <p>
-                    Copyright © <a href="index.html">CellphoneS</a> Đã đăng ký bản quyền. <a href="#">onefamily@.</a>
+                    Copyright © <a href="index.html">CellphoneS</a> Đã đăng ký bản quyền. <a href="#/">onefamily@.</a>
                   </p>
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
                 <div className="footer__payment f-right">
-                  <a href="#" className="m-img">
+                  <a href="#/" className="m-img">
                     <img src="assets/img/icon/payment.png" alt="" />
                   </a>
                 </div>

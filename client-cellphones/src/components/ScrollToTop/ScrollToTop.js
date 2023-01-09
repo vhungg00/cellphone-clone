@@ -8,11 +8,11 @@ const cx = classNames.bind(styles);
 const CONSTANTS = "1000";
 function ScrollToTop() {
   const [height, setHeight] = useState(0);
-  const handleScrollToTop =useCallback(() => setHeight(window.pageYOffset),[height])
+  const handleScrollToTop =useCallback(() => setHeight(window.pageYOffset),[])
   useEffect(() => {
     window.addEventListener("scroll", handleScrollToTop);
     return () => window.removeEventListener('scroll', handleScrollToTop)
-    }, [height]);
+    }, [height, handleScrollToTop]);
   return (
     <>
       { height > CONSTANTS ? (

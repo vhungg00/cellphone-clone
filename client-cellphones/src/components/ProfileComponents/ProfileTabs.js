@@ -5,7 +5,7 @@ import Toast from "../LoadingError/Toast";
 import Loading from "../LoadingError/Loading";
 import { toast } from "react-toastify";
 import { updateUserProfile } from "~/appRedux/actions/userAction";
-// import { updateUserProfile } from "../../Redux/Actions/userActions";
+import { useMemo } from "react";
 
 const ProfileTabs = () => {
   const [name, setName] = useState("");
@@ -24,10 +24,8 @@ const ProfileTabs = () => {
   const dispatch = useDispatch();
 
   const userDetail = useSelector((state) => state.auth);
-  console.log('user: ', userDetail)
   const { loading, error, user } = userDetail;
-  const userInfo = user.data || {};
-  console.log('userDetail: ',userDetail)
+  const userInfo = useMemo(() => user.data, [user]);
   const userUpdateProfile = useSelector((state) => state.auth);
   const { loading: updateLoading } = userUpdateProfile;
 

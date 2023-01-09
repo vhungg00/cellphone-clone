@@ -123,7 +123,7 @@ const PlaceOrderPage = () => {
         <div className="row order-products justify-content-between">
           <div className="col-lg-8">
             {cart.carts.length === 0 ? (
-              <a variant="alert-info mt-5">Your cart is empty</a>
+              <a href="#/" variant="alert-info mt-5">Your cart is empty</a>
             ) : (
               <>
                 {cart.carts.map((item, index) => (

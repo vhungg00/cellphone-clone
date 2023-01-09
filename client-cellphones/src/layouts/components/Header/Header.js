@@ -1,4 +1,4 @@
-  import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 
@@ -49,7 +49,7 @@ function Header() {
     },
     {
       label: (
-        <a
+        <a href="#/"
           className="ant-dropdown-menu-title-content-item"
           onClick={handleLogOutClick}
         >

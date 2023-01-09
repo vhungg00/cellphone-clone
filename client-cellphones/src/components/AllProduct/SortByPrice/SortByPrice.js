@@ -20,7 +20,7 @@ function SortByPrice() {
   const items = [
     {
       label: (
-        <a
+        <a href="#/"
           className="ant-dropdown-menu-title-content-item"
           onClick={descending}
         >
@@ -32,7 +32,7 @@ function SortByPrice() {
 
     {
       label: (
-        <a
+        <a href="#/"
           className="ant-dropdown-menu-title-content-item"
           onClick={ascending}
         >

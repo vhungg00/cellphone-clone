@@ -19,7 +19,7 @@ function Login() {
       if (isLogin) {
         navigate(`/${url}`);
       }
-    }, [user, navigate, url]);
+    }, [isLogin, user, navigate, url]);
     const handleOnFinish = async (values) => {
         const res  = await dispatch(UserLogin(values));
         if(res.status === 200 && res.success) {
@@ -70,7 +70,7 @@ function Login() {
                     <Checkbox>Nhớ đăng nhập</Checkbox>
                   </Form.Item>
 
-                  <a className="login-form-forgot" href="">
+                  <a href="#/" className="login-form-forgot">
                     Lấy lại mật khẩu
                   </a>
                 </Form.Item>

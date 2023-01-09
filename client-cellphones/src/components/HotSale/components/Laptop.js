@@ -18,7 +18,7 @@ function Laptop() {
         await dispatch(getLaptopByCategory(SLUG_CATEGORY));
     }
     fetchApi()
-  },[])
+  },[dispatch])
 
   const temps = useSelector(state => state.cate.laptops)
   const products = handlePercentDiscount(temps)

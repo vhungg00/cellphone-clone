@@ -2620,7 +2620,7 @@ p {
 
 .product__content .price {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   font-size: 16px;
   font-weight: 500;
@@ -4432,7 +4432,6 @@ p.checkout-coupon input[type="submit"]:hover {
   border: medium none;
   color: #fff;
   display: inline-block;
-  float: left;
   font-size: 12px;
   font-weight: 700;
   height: 40px;
@@ -4786,7 +4785,6 @@ p.checkout-coupon input[type="text"]:focus {
 }
 
 .payment-method .btn-link {
-  -moz-user-select: none;
   background: no-repeat;
   border: medium none;
   border-radius: 0;
@@ -6352,9 +6350,6 @@ p.checkout-coupon input[type="text"]:focus {
 }
 
 /* custom css antd*/
-.best__sell-box {
-}
-
 .ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap {
   flex: unset !important;
 }
@@ -6977,7 +6972,6 @@ p.checkout-coupon input[type="text"]:focus {
   color: #7a7a7a;
 }
 /* admin css */
-@charset "UTF-8";
 /* ==== CUSTOM UI ELEMENTS AND STYLES ====*/
 /* ========================
 INCLUDE STYLES AND COMPONENTS
@@ -7332,7 +7326,6 @@ body.aside-mini .menu-aside .menu-item.has-submenu .menu-link:after {
 }
 .menu-aside .menu-item.has-submenu > .menu-link:after {
   display: inline-block;
-  float: right;
   position: absolute;
   right: 10px;
   top: 10px;

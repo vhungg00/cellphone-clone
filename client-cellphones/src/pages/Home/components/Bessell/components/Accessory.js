@@ -1,5 +1,5 @@
 import { Spin } from "antd";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "~/appRedux/actions/productAction";
 import Hotsale from "~/components/HotSale/components/Hotsale";
@@ -17,7 +17,7 @@ function Accessory() {
       await setLoading(false);
     };
     fetchApi();
-  }, []);
+  }, [dispatch]);
   return (
     <div className="product__slider owl-carousel">
       {loading && <Spin size="large" />}

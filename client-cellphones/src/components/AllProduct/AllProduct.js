@@ -7,7 +7,6 @@ import { Pagination } from 'antd';
 import Product from './Product';
 import Loading from '../Loading';
 
-import SortByPrice from './SortByPrice';
 import Breadcrumb from '../Breadcrumb';
 
 import { handlePercentDiscount } from '~/untils';
@@ -18,6 +17,7 @@ import './Sale.css';
 
 import classNames from 'classnames/bind';
 import styles from './Allproduct.module.scss';
+import { useCallback } from 'react';
 const cx = classNames.bind(styles);
 
 function AllProduct() {
@@ -29,18 +29,17 @@ function AllProduct() {
 
     const products = useSelector(state => state.product.products)
     let loading = useSelector(state => state.product.isLoading)
+    const handleChangePage = useCallback(() => async (number) => {
+        await dispatch(getAllProducts("", number));
+    }, [dispatch])
 
     useEffect(() => {
-        HandleChangePage()
+        handleChangePage()
         return () => {
             return []
         }
-    }, [])
-    const HandleChangePage = async (number) => {
-        await dispatch(getAllProducts("", number));
-        loading = false;
-    };
-
+    }, [handleChangePage])
+   
     const temps = handlePercentDiscount(products)
 
     return (
@@ -66,7 +65,7 @@ function AllProduct() {
                 defaultCurrent={1}
                 current={current}
                 total={pages * 10}
-                onChange={HandleChangePage}
+                onChange={handleChangePage}
                 />
             </div>
         </section>

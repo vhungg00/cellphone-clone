@@ -40,8 +40,8 @@ function Carousel() {
             <Slider {...settings} ref={ref}>
               {slides.map(slide => 
                 (<div className={cx("slider-item")} key={slide.id}>
-                  <a className={cx('item-link')} href=""></a>
-                  <img src={slide.image} alt="" />
+                  <a href="/" className={cx('item-link')}>{""}</a>
+                  <img src={slide.image} alt={slide.title} />
                 </div>)
               )}
             </Slider>

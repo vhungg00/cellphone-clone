@@ -30,14 +30,19 @@ function ShippingPage() {
   const [nameWard, setNameWard] = useState("");
   const [form] = Form.useForm();
 
+ 
   useEffect(() => {
+    const getList = async () => {
+      await getProvinces();
+    }
+    const reset = () => {
+      form.resetFields([]);
+    };
     getList();
     return reset();
-  }, [dispatch]);
+  }, [form]);
 
-  const reset = () => {
-    form.resetFields([]);
-  };
+ 
   const getProvinces = async () => {
     const result = await cellphonesApi.getProvince();
     setProvinces(result.data);
@@ -81,18 +86,6 @@ function ShippingPage() {
     }
   };
 
-
-  const getList = async () => {
-    await getProvinces();
-  }
-
-  const cartItems = JSON.parse(localStorage.getItem('CART_ITEM'));
-  console.log('cartItems: ', cartItems)
-  const totalPrice = cartItems?.reduce(
-    (total, item) => total + item.qty * item.salePrice,
-    0
-  );
-  
   const userInfo = useSelector(state => state.auth.user)
   const onSubmit = async (value) => {
     const newValue = {

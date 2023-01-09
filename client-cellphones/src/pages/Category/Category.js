@@ -1,10 +1,8 @@
-import { useEffect, memo, useState } from 'react';
+import { useEffect, memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import Image from '~/components/Image/Image';
 import { getProductByCategory } from '~/appRedux/actions/cateAction';
-import PrdByCate from '~/components/AllProduct/PrdByCate/components/PrdByCate';
 import Loading from '~/components/Loading';
 
 import classNames from 'classnames/bind';
@@ -26,10 +24,9 @@ function Category() {
     useEffect(() => {
         const fetchApi = async () => {
             await dispatch(getProductByCategory(slugCate))
-            loading = false;
         }
         fetchApi();
-    }, [slugCate])
+    }, [dispatch, slugCate])
 
     const HandleChangePage = async (number) => {
         await dispatch(getProductByCategory("", number));

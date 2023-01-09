@@ -15,6 +15,7 @@ import { deleteProduct, getAllProducts } from "~/appRedux/actions/productAction"
 import config from "~/config";
 import classNames from "classnames/bind";
 import styles from "./ProductList.module.scss";
+import { useCallback } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -28,14 +29,16 @@ function ProductList() {
   const current = useSelector((state) => state.product.current);
   let loading = useSelector((state) => state.product.isLoading);
 
-  useEffect(() => {
-    HandleChangePage()
-  }, []);
-  
-  const HandleChangePage = async (number) => {
+  const handleChangePage = useCallback(() => async (number) => {
     await dispatch(getAllProducts("", number));
-    loading = false;
-  };
+}, [dispatch])
+
+useEffect(() => {
+    handleChangePage()
+    return () => {
+        return []
+    }
+}, [handleChangePage])
 
   const handleDelete = async (id) => {
     await dispatch(deleteProduct(id));
@@ -150,7 +153,7 @@ function ProductList() {
           defaultCurrent={1}
           current={current}
           total={pages * 10}
-          onChange={HandleChangePage}
+          onChange={handleChangePage}
         />
       </div>
     </div>

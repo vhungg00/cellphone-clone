@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const OrderDetailProducts = (props) => {
-  const { order = {}, loading } = props;
+  const { order = {} } = props;
   const { orderItems = [] } = order || {};
   return (
     <table className="table border table-lg">

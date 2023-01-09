@@ -20,7 +20,7 @@ function Search() {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(false);
-    const [products, setProducts] = useState([...Array(5).keys()])
+    const [products] = useState([...Array(5).keys()])
     const [loading, setLoading] = useState(false);
     const inputRef = useRef()
     const debouncedValue = useDebounce(searchValue, 600);
@@ -62,7 +62,7 @@ function Search() {
     }
     const handleClickMenuHide = useCallback(() => {
       setShowResult(false)
-    })
+    }, [])
   return (
     <>
       <HeadlessTippy

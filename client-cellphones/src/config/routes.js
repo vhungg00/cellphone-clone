@@ -12,7 +12,7 @@ const routes = {
     shipping: '/shipping',
     payment: '/payment',
     placeorder: '/placeorder',
-    order: '/order/:id',
+    orderId: '/order/:id',
     profile: '/profile',
     notFound: '*',
 }

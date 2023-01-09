@@ -23,10 +23,10 @@ const Register = () => {
       message.success("Đăng ký thành công");
       dispatch(userReset())
     }
-  }, [success, navigate, redirect]);
+  }, [ dispatch,success, navigate, redirect]);
 
   const handleOnFinish = async (values) => {
-    const res = await dispatch(register(values));
+    await dispatch(register(values));
   };
   const handleOnFinishFailed = (error) => {
     console.log("Failed:", error);

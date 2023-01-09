@@ -7,6 +7,7 @@ const SaleStatistics = () => {
         <article className="card-body">
           <h5 className="card-title">Sale statistics</h5>
           <iframe
+            title="This is a unique title"
             style={{
               background: "#FFFFFF",
               border: "none",

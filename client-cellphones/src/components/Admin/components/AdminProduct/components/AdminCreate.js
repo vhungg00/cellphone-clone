@@ -33,7 +33,7 @@ function AdminCreate(props) {
     dispatch(getAllTypeProduct());
     dispatch(getAllSelectProduct());
     dispatch(getCate());
-  }, []);
+  }, [dispatch]);
 
   const handleFileImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -75,7 +75,7 @@ function AdminCreate(props) {
       className={cx("menu_item", `${activeType === item.name ? "active" : ""}`)}
       onClick={() => handleActiveType(item.name)}
     >
-      <img src={item.img}></img>
+      <img src={item.img} alt={item.name}></img>
     </div>
   );
 

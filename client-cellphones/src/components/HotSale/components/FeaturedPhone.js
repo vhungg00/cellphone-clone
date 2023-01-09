@@ -4,7 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 import Slider from "react-slick";
 import { formatPrice, handlePercentDiscount } from "~/untils";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import Loading from "~/components/Loading";
 import { getProductByCategory } from "~/appRedux/actions/cateAction";
 import Rating from "~/components/Rating";
 const SLUG_CATEGORY = 'dien-thoai';
@@ -18,7 +17,7 @@ function FeaturedPhone() {
         await dispatch(getProductByCategory(SLUG_CATEGORY));
     }
     fetchApi()
-  },[])
+  },[dispatch])
 
   const temps = useSelector(state => state.cate.cate)
   const products = handlePercentDiscount(temps)

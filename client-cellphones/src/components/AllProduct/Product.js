@@ -5,12 +5,7 @@ import { formatPrice } from "~/untils";
 
 function Product({ product }) {
     
-    const { slug="", image = "", name = "", salePrice = 1, price = 1, percentDiscount = 1 } = product || {};
-  function AddToCart(product) {
-    // const action = AddProduct(product);
-    // dispatch(action);
-  }
-
+  const { slug="", image = "", name = "", salePrice = 1, price = 1, percentDiscount = 1 } = product || {};
   return (
     <div className="product__item product__item-2 white-bg">
       <div className="product__item-link">

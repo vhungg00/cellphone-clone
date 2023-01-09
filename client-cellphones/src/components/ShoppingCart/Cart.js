@@ -27,7 +27,7 @@ function Cart() {
   const handleRedirect = useCallback(() => {
     isLogin ? navigate(config.routes.shipping):
     navigate("/login?redirect=shipping")
-  }, [navigate])
+  }, [navigate, isLogin])
 
 
   return (

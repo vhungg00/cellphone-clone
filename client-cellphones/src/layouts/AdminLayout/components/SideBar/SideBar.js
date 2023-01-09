@@ -1,9 +1,17 @@
 import { WechatOutlined } from "@ant-design/icons";
 import {
   AttachMoney,
-  BarChart, ChatBubbleOutline, DynamicFeed, LineStyle, MailOutline, PermIdentity, Report,
-  ShopOutlined, ShoppingBasket, Storefront, Timeline,
-  TrendingUp, WorkOutline
+  BarChart,
+  ChatBubbleOutline,
+  DynamicFeed,
+  LineStyle,
+  MailOutline,
+  Report,
+  ShoppingBasket,
+  Storefront,
+  Timeline,
+  TrendingUp,
+  WorkOutline,
 } from "@material-ui/icons";
 import classNames from "classnames/bind";
 import { NavLink } from "react-router-dom";
@@ -69,7 +77,6 @@ export default function SideBar() {
         <div className={cx("sidebarMenu")}>
           <h3 className={cx("sidebarTitle")}>Quick Menu</h3>
           <ul className={cx("sidebarList")}>
-            
             <li className={cx("sidebarListItem")}>
               <AttachMoney className={cx("sidebarIcon")} />
               Transactions

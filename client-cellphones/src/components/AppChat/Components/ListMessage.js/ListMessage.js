@@ -11,17 +11,17 @@ function ListMessage({messages, user}) {
     const [timeMessage, setTimMessages] = useState({})
     const handleTimeMessage = useCallback((createAted, id) => {
         setTimMessages({createAted, id})
-    }, [timeMessage])
+    })
     
     const handleHideTimeMessage = useCallback(() => {
         setTimMessages({})
-    }, [timeMessage])
+    })
 
     useEffect(()=> {
         const element = document.querySelector('.ListMess');
         element.addEventListener('click', handleHideTimeMessage)
         return () => element.removeEventListener('click', handleHideTimeMessage)
-    }, [timeMessage]);
+    }, []);
     return (
         <div className={cx("ListMessage", "ListMess")}>
             {messages.map(message => (

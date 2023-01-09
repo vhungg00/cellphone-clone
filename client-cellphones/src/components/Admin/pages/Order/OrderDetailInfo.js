@@ -6,7 +6,7 @@ const OrderDetailInfo = ({order}) => {
   const { shippingAddress = {}, paymentMethod = '', user = {} } = order || {};
 
   const { name = '', email = ''} = user || {};
-  const { more = '', ward = '', phone = '', province = '', district = ''} = shippingAddress || {};
+  const { more = '', ward = '', province = '', district = ''} = shippingAddress || {};
   return (
     <div className="row mb-5 order-info-wrap">
       <div className="col-md-6 col-lg-4">

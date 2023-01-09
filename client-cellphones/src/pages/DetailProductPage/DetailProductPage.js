@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { formatPrice } from "~/untils";
@@ -22,7 +22,6 @@ import Message from "~/components/LoadingError/Error";
 import { useState } from "react";
 import { prdCreateReviewReset } from "~/appRedux/reducerSlice/productSlice";
 import moment from "moment";
-import AppChat from "~/components/AppChat";
 import Title from "~/components/Title";
 
 const cx = classNames.bind(styles);
@@ -72,7 +71,7 @@ function DetailProductPage() {
       dispatch(prdCreateReviewReset());
     }
     fetchApi();
-  }, [dispatch, slug, successCreateReview]);
+  }, [dispatch, slug, successCreateReview, errorCreateReview]);
 
   const handleAddCart = async (payload) => {
     await dispatch(addCart(payload));
@@ -85,7 +84,7 @@ function DetailProductPage() {
   };
   const handleRedirect = useCallback(() => {
     navigate(`${config.routes.login}?redirect=product-detail/${slug}`);
-  }, [slug]);
+  }, [slug, navigate]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -154,22 +153,22 @@ function DetailProductPage() {
                   <div className="product__details-action">
                     <ul>
                       <li>
-                        <a href="#" title="Add to Wishlist">
+                        <a href="#/" title="Add to Wishlist">
                           <i className="fal fa-heart" />
                         </a>
                       </li>
                       <li>
-                        <a href="#" title="Compare">
+                        <a href="#/" title="Compare">
                           <i className="far fa-sliders-h" />
                         </a>
                       </li>
                       <li>
-                        <a href="#" title="Print">
+                        <a href="#/" title="Print">
                           <i className="fal fa-print" />
                         </a>
                       </li>
                       <li>
-                        <a href="#" title="Print">
+                        <a href="#/" title="Print">
                           <i className="fal fa-share-alt" />
                         </a>
                       </li>
@@ -276,7 +275,7 @@ function DetailProductPage() {
           </div>
         </div>
       </section>
-      {user ? <AppChat /> : null}
+      {/* {user ? <AppChat /> : null} */}
     </main>
   );
 }

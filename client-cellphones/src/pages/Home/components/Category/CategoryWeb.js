@@ -10,7 +10,6 @@ import classNames from 'classnames/bind';
 import styles from './Category.module.scss';
 import { AppsOutlined } from "@material-ui/icons";
 import config from "~/config";
-import images from "~/assets/images";
 
 const cx = classNames.bind(styles);
 function Categoryweb() {
@@ -19,7 +18,7 @@ function Categoryweb() {
 
   useEffect(() => {
     dispatch(getCate());
-  }, []);
+  }, [dispatch]);
   return (
     <SlideToggle duration={900} offsetHeight={300}>
       {({ toggle, setCollapsibleElement, progress }) => (

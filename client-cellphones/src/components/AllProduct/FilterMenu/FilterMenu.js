@@ -18,7 +18,7 @@ export default function FilterMenu() {
 
   useEffect(() => {
     dispatch(filterProductByRandomField(dataFilter));
-  }, [dataFilter]);
+  }, [dispatch, dataFilter]);
 
   useEffect(() => {
     dispatch(getAllSelectList())

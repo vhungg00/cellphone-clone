@@ -21,7 +21,7 @@ function AllCategory() {
 
   useEffect(() => {
     dispatch(getCate());
-  }, []);
+  }, [dispatch]);
 
   const handleRemoveItem = (item) => {
     console.log(item)

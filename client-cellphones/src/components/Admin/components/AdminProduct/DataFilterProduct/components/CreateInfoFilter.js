@@ -72,6 +72,7 @@ const CreateInfoFilter = () => {
             ))}
           </div>
           <a
+            href="#/"
             onClick={handleAddOption}
           >
             <p>Add options</p>

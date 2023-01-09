@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Slider } from "antd";
-
-import { formatPrice } from "../../untils/index";
-import FilterMenu from "./FilterMenu/FilterMenu";
-
 import classNames from "classnames/bind";
 import styles from "./Allproduct.module.scss";
 import SortByPrice from "./SortByPrice";

@@ -1,6 +1,5 @@
 import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useDocumentTitle } from "./hooks";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { adminRoutes, clientRoutes } from "./routes/Routes";
 
@@ -22,7 +21,7 @@ function App() {
       }
     }
     fetchApi();
-  }, [authUser])
+  }, [dispatch, authUser])
   return (
     <Router>
       <div className="App">

@@ -6,7 +6,7 @@ function DropdownC({menu,children, placement}) {
         <Dropdown overlay={menu} trigger={['click']}
         placement={placement}
          >
-          <a onClick={(e) => e.preventDefault()}>
+          <a href='#/' onClick={(e) => e.preventDefault()}>
             <Space>
               {children}
             </Space>
