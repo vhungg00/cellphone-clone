@@ -7,7 +7,15 @@ import Carousel from "~/components/Slider/Carousel";
 import Categoryweb from "./components/Category/CategoryWeb";
 import Laptop from "~/components/HotSale/components/Laptop";
 import FeaturedPhone from "~/components/HotSale/components/FeaturedPhone";
+import { getAllSlider } from "~/appRedux/actions/SliderAction";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 function Home() {
+  const dispatch = useDispatch()
+  const sliderList = useSelector(state => state.slider.imageList)
+  useEffect(() => {
+    dispatch(getAllSlider());
+  }, [dispatch]);
   return (
     <>
       <section className="slider__area pt-50">
@@ -20,7 +28,7 @@ function Home() {
             <div className="col-xl-10 custom-col-10 col-lg-12">
               <div className="row">
                 <div className="col-xl-9 custom-col-9 col-lg-8">
-                  <Carousel />
+                  <Carousel sliderList = {sliderList} />
                 </div>
                 <div className="col-xl-3 custom-col-3 col-lg-4 d-none d-md-block">
                   {subSlides.map((subSlide) => (

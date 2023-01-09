@@ -1,5 +1,7 @@
 export const API_ENDPOINT = {
   GET_LIST_CATEGORY: "/category/get-allcategory",
+  CREATE_CATEGORY: '/category/add-category',
+  DELETE_CATEGORY: '/category/delete-category/:id',
   GET_PRODUCT_BY_CATE: 'products/category/slugCate',
 
   SEARCH_PRODUCT: "/products/search",

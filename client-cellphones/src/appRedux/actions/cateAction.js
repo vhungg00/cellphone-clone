@@ -1,5 +1,5 @@
 import cellphonesApi from '~/api/cellphonesApi';
-import { getCatePending, getCateSuccess, getCateFail, getPrdByCate, getLaptopByCate } from '~/appRedux/reducerSlice/cateSlice';
+import { getCatePending, getCateSuccess, getCateFail, getPrdByCate, getLaptopByCate, createCate, deleteCate } from '~/appRedux/reducerSlice/cateSlice';
 
 export const getCate = () => async (dispatch) => {
     await dispatch(getCatePending());
@@ -29,4 +29,20 @@ export const getLaptopByCategory = (slugCate) => async (dispatch) => {
     } else {
         await dispatch(getCateFail());
     }
+};
+
+export const createCategory = (payload) => async (dispatch) => {
+    await dispatch(getCatePending());
+    const res = await cellphonesApi.createCategory(payload);
+    if(res.data) {
+        await dispatch(createCate(res.data));
+    } else {
+        await dispatch(getCateFail());
+    }
+};
+
+export const deleteCategory = (id) => async (dispatch) => {
+    await dispatch(getCatePending());
+    await cellphonesApi.deleteCategory(id);
+    await dispatch(deleteCate());
 };

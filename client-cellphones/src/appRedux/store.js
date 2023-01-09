@@ -9,6 +9,7 @@ import prdReducer from './reducerSlice/productSlice';
 import cartReducer from './reducerSlice/cartSlice';
 import orderReducer from './reducerSlice/orderSlice';
 import chatReducer from './reducerSlice/chatSlice';
+import sliderReducer from './reducerSlice/SliderSlice'
 const rootReducer = combineReducers({
     auth: authReducer,
     cate: cateReducer,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     cart: cartReducer,
     order: orderReducer,
     chat: chatReducer,
+    slider: sliderReducer,
 });
 
 const cartItemsFromLocalStorage = localStorage.getItem("CART_ITEM")

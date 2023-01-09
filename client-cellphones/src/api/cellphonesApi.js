@@ -14,6 +14,18 @@ const cellphonesApi = {
         let res = await axiosCreate().get(API_ENDPOINT.GET_LIST_CATEGORY);
         return res;
     },
+    createCategory: async (payload) => {
+        let res = await axiosCreate().post(API_ENDPOINT.CREATE_CATEGORY, payload);
+        return res;
+    },
+    deleteCategory: async (id) => {
+        let res = await axiosCreate().get(API_ENDPOINT.DELETE_CATEGORY, {
+            params: {
+                id
+            }
+        })
+        return res;
+    },
     getProductByCate: async (slugCate) => {
         let res = await axiosCreate().get(API_ENDPOINT.GET_PRODUCT_BY_CATE, {
             params: {

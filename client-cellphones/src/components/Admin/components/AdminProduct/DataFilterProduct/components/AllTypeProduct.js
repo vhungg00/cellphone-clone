@@ -4,10 +4,10 @@ import { DeleteOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTypeProduct, getAllTypeProduct } from "~/appRedux/actions/productAction";
 
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import styles from "../Feature.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 
 export default function AllTypeProduct() {

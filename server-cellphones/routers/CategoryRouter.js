@@ -7,12 +7,4 @@ CategoryRouter.get('/get-allcategory', getAllCategory)
 CategoryRouter.post('/add-category',upload.single("image"),  protect, isAdmin, createCategory)
 CategoryRouter.delete('/delete-category/:id', protect, isAdmin, deleteCategory)
 CategoryRouter.post('/update-category/:id', upload.single("image"),  protect, isAdmin, createCategory)
-
-
-
-
-CategoryRouter.get('/abc', (req, res) => {
-    res.send({message: 'done'})
-})
-
 export default CategoryRouter

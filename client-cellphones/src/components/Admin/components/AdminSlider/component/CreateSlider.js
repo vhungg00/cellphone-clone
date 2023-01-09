@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 
-import classNames from "classnames/bind";
 import { createSlider, getAllSlider } from "~/appRedux/actions/SliderAction";
+import classNames from "classnames/bind";
 import styles from '../AdSlider.module.scss';
 
 const cx = classNames.bind(styles);
