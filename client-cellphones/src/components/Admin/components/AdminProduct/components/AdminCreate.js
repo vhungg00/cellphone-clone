@@ -105,7 +105,6 @@ function AdminCreate(props) {
            {errors.slug && <p>{errors.slug?.message}</p>}
           <div className={cx("cate_item")}>
             <select {...register("category")}
-             {...register("name", { required: "Vui lòng nhập trường này" })}
              className={cx("select")}>
               <option>Các danh mục sản phẩm</option>
               {cates &&
