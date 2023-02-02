@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { formatPrice } from "~/untils";
@@ -29,6 +29,7 @@ const desc = ["Rất tệ", "Tệ", "Bình thường", "Tốt", "Rất tốt"];
 
 function DetailProductPage() {
   const { slug } = useParams();
+  const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [rating, setRating] = useState(3);
@@ -48,7 +49,7 @@ function DetailProductPage() {
     price = 0,
     salePrice = 0,
     numReviews= 1,
-    rating: ratingCall = 1,
+    rating: ratingCall = 0,
     category = {},
     reviews = [],
     type = "",
@@ -57,21 +58,21 @@ function DetailProductPage() {
   } = temp || {};
   const { name: nameCate = "" } = category || {};
   useEffect(() => {
-    const fetchApi = async () => {
-      const res = await dispatch(getPrdDetailBySlug(slug));
-      return res;
-    };
     if (successCreateReview) {
-      alert("Đã gửi bài đánh giá");
+      message.success("Sản phẩm đã được đánh giá");
       setRating(0);
       setComment("");
-      fetchApi()
-      dispatch(prdCreateReviewReset());
-    } else if( errorCreateReview ){
+      console.log('hung')
       dispatch(prdCreateReviewReset());
     }
-    fetchApi();
-  }, [dispatch, slug, successCreateReview, errorCreateReview]);
+    dispatch(getPrdDetailBySlug(slug));
+  }, [dispatch, slug, successCreateReview]);
+
+  useEffect(() => {
+    if (!successCreateReview) {
+      dispatch(prdCreateReviewReset());
+    }
+  }, [dispatch, location, successCreateReview])
 
   const handleAddCart = async (payload) => {
     await dispatch(addCart(payload));
