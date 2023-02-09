@@ -1,0 +1,135 @@
+.Wrapper {
+  padding: 0.8rem;
+  border: var(--border-boxReview);
+  border-radius: 0.8rem;
+}
+.Title {
+  font-size: 2rem;
+  text-align: left;
+  color: #000;
+}
+.comment-area {
+  display: flex;
+  button {
+    background-color: #fcb700;
+    width: 11rem;
+    height: 5rem;
+    margin-left: 0.8rem;
+    border-radius: 0.4rem;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: center;
+    span:last-child {
+      color: #fff;
+      font-weight: 600;
+    }
+    &:hover {
+      opacity: 0.8;
+      transition: ease 0.2s;
+    }
+  }
+}
+.textarea {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgb(60 64 67 / 10%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  min-width: 0 !important;
+  padding: 0.4rem;
+}
+.icon-paper-plane svg path {
+  fill: #fff;
+}
+
+.AllComment {
+}
+.Item {
+}
+.Info {
+}
+
+.avatar {
+  .image > img {
+    border-radius: 0.4rem;
+    margin-right: 0.6rem;
+    width: 2.5rem;
+    object-fit: cover;
+  }
+  .user {
+    width: 2.5rem;
+    border-radius: 0.4rem;
+    align-items: center;
+    background-color: #ddd;
+    border-radius: 5px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    height: 25px;
+    justify-content: center;
+    margin: 0 5px 0 0;
+    text-transform: capitalize;
+    width: 25px;
+    color: #015384;
+  }
+}
+
+.adminFlag {
+    display: flex;
+    align-items: center;
+}
+.adminFlag > span {
+    align-items: center;
+    background: #d70018;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    font-size: 10px;
+    font-weight: 700;
+    height: 18px;
+    line-height: 1;
+    margin: 0 0 0 5px;
+    padding: 2px 6px;
+}
+.boxRep {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 10%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    margin-left: auto;
+    overflow: hidden;
+    padding: 10px;
+    width: calc(100% - 25px);
+    .content {
+        text-align: left;
+        font-size: 14px;
+        color: #664d03;
+    }
+}
+.action-icon{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 8rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.comment-area {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 10%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    margin-left: auto;
+    overflow: hidden;
+    padding: 10px;
+    width: calc(100% - 25px);
+}
+.comment-send {
+    text-align: right;
+    button {
+        margin-top: 1rem;
+        background-color: #fcb700;
+        width: 10rem;
+        margin-left: 0.8rem;
+        border-radius: 0.4rem;
+    
+    }
+}

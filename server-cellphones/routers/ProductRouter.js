@@ -36,9 +36,9 @@ ProductRouter.post("/:id/review", protect, reviewProductByUser);
 ProductRouter.post("/rate/:id", RateProduct);
 ProductRouter.post("/filter/random", filterProductByRandomField);
 
-ProductRouter.post("/comment/:id", CommentProduct);
+ProductRouter.post("/comment/:slug", CommentProduct);
 ProductRouter.post("/pin/comment/:id", PinCommentProduct);
-ProductRouter.post("/rep/comment/:id", RepCommentProduct);
+ProductRouter.post("/rep/comment/:slug", RepCommentProduct);
 ProductRouter.post(
   "/create",
   protect,

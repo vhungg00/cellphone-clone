@@ -186,7 +186,6 @@ const cellphonesApi = {
 
     configPaypal: async () => {
         let res = await axiosCreate().get(API_ENDPOINT.PAYPAL_CONFIG);
-        console.log('res1321: ', res);
         return res;
     },
     getOrderDetail: async (id) => {
@@ -256,7 +255,15 @@ const cellphonesApi = {
             }
         })
         return res;
-    }
+    },
+    commentPrd: async (slug, comment) => {
+        let res = await axiosCreate().post(`${API_ENDPOINT.COMMENT_PRODUCT}/${slug}`, comment)
+        return res;
+    },
+    repCommentPrd: async (slug, comment) => {
+        let res = await axiosCreate().post(`${API_ENDPOINT.REP_CMT_PRODUCT}/${slug}`, comment)
+        return res;
+    },
 
 }
 

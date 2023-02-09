@@ -1,66 +1,71 @@
-import React, { useState } from "react";
-import { Col } from "antd";
-import { WechatOutlined, PushpinOutlined, LockOutlined  } from "@ant-design/icons";
+import { message } from "antd";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  pinCommentProduct,
-  repCommentProduct,
-} from "../../actions/ProductAction";
 import { useParams } from "react-router-dom";
+import { repCommentProduct } from "~/appRedux/actions/productAction";
+import { getFirstCharacterUser } from "~/untils";
 import AllRepComment from "./AllRepComment";
-import { getFirstCharacterUser } from "../../untils";
+import { LockOutlined, PushpinOutlined, WechatOutlined } from "@ant-design/icons";
 
-function AllComment(props) {
-  const { id } = useParams();
-  const { allComment } = props;
-  console.log("allCommet: ", allComment);
+import className from "classnames/bind";
+import styles from "./Comment.module.scss";
+const cn = className.bind(styles);
+
+function AllComment() {
+  const { slug } = useParams();
+  const [temp] = useSelector((state) => state.product.products);
+  const {
+    comments = []
+  } = temp || {};
   const dispatch = useDispatch();
+  const { data: user } = useSelector((state) => state.auth.user);
+
   const [repCmt, setRepCmt] = useState({ key: "", status: false });
-  const { userInfo } = useSelector((state) => state.userSignin);
   const [repValue, setRepValue] = useState("");
   const showRepComment = (id) => {
     setRepCmt({ key: id, status: !repCmt.status });
   };
-  const handleRepComment = (value) => {
-    if (userInfo) {
+  const handleRepComment = () => {
+    if (user) {
       const comment = {
         idComment: repCmt.key,
-        isAdmin: userInfo.isAdmin,
+        isAdmin: user.isAdmin,
         content: repValue,
-        nameUser: userInfo.name,
+        nameUser: user.name,
+        byUser: user._id
       };
-      console.log(comment);
-      dispatch(repCommentProduct(id, comment));
+      console.log('commet', comment);
+      dispatch(repCommentProduct(slug, comment));
       setRepValue("");
       setRepCmt({ key: "", status: false });
-    } else alert("Đăng nhập đi bạn eiii");
+    } else message.info("Bạn vui lòng đăng nhập để thực hiện tác vụ này");;
   };
 
   const PinComment = (comment) => {
-    const UpdateComment = { ...comment, status: "pin" };
-    console.log(UpdateComment);
+    // const UpdateComment = { ...comment, status: "pin" };
+    // console.log(UpdateComment);
 
-    dispatch(pinCommentProduct(id, UpdateComment));
+    // dispatch(pinCommentProduct(id, UpdateComment));
   };
 
   return (
-    <div class="all-comment">
-      {allComment.map((comment) => (
-        <>
-          <Col span={18} style={{ marginTop: "1rem" }} xs={24} sm={24} md={18}>
-            <div className="all-comment-info">
-              <div style={{ display: "flex" }}>
-                {comment.isAdmin ? (
-                  <div className="all-comment-info-name admin">
-                    <img src="https://cellphones.com.vn/skin/frontend/default/cpsdesktop/images/media/logo.png"></img>
+    <div className={cn('AllComment')}>
+      { comments.map((comment) => (
+        <div key={comment._id}>
+          <div className={cn('Item', 'mt-2')}>
+            <div className={cn('Info')}>
+              <div className={cn('avatar')} style={{ display: "flex" }}>
+                {comment?.isAdmin ? (
+                  <div className={cn('image')}>
+                    <img src="https://cellphones.com.vn/skin/frontend/default/cpsdesktop/images/media/logo.png" alt="hoa"></img>
                   </div>
                 ) : (
-                  <div className="all-comment-info-name">
+                  <div className={cn('image', 'user')}>
                     {getFirstCharacterUser(comment.author)}
                   </div>
                 )}
                 {comment.isAdmin ? (
-                  <strong>
+                  <strong className={cn('adminFlag')}>
                     {comment.author} <span>QTV</span>
                   </strong>
                 ) : (
@@ -68,14 +73,14 @@ function AllComment(props) {
                 )}
               </div>
 
-              {userInfo.isAdmin ? (
+              {user?.isAdmin ? (
                 <div className="comment-status">
                   <div
                     className="comment-status-pin"
                     onClick={() => PinComment(comment)}
                   >
                     {
-                      comment.status === 'pin' ? (<LockOutlined></LockOutlined>) : (<PushpinOutlined></PushpinOutlined>) 
+                      comment.status === 'pin' ? (<LockOutlined />) : (<PushpinOutlined />) 
                     }
                   </div>
                 </div>
@@ -91,128 +96,48 @@ function AllComment(props) {
                 </div>
               )}
             </div>
-            <div className="all-comment-content">{comment.content}</div>
-            <div className="all-comment-more">
-              <a
-                className="all-comment-more-chat"
-                onClick={() => showRepComment(comment._id)}
-              >
-                <WechatOutlined style={{ color: "#e11b1e" }} /> <p> Trả lời</p>
-              </a>
-            </div>
+            <div className={cn('boxRep')}>
+              <div className={cn('content')}>{comment.content}</div>
+              <div className={cn('more-replied')}>
+                <button
+                  className={cn('action-icon')}
+                  onClick={() => showRepComment(comment._id)}
+                >
+                  <WechatOutlined style={{ color: "#e11b1e" }} /> <p> Trả lời</p>
+                </button>
+              </div>
+            </div >
             {comment.replies.length > 0 ? (
               <AllRepComment
                 allrepcomment={comment.replies}
                 showRepComment={showRepComment}
-                id={comment._id}
               ></AllRepComment>
             ) : (
               ""
             )}
-          </Col>
+          </div>
           {repCmt.status === true && repCmt.key === comment._id ? (
-            <Col
-              span={18}
-              xs={24}
-              md={18}
-              align="start"
-              style={{
-                alignItems: "center",
-                marginTop: "1rem",
-                marginBottom: "1rem",
-              }}
-            >
+            <div className={cn('boxRepComment', 'mt-4')}>
               <div
-                className="comment-area"
+                className={cn("comment-area")}
                 style={{ display: "flex", alignItems: "center" }}
               >
                 <textarea
                   placeholder="Xin mời để lại câu hỏi, CellphoneS sẽ trả lời trong 1h từ 8h - 22h mỗi ngày."
-                  rows={10}
-                  cols={3}
                   vaule={repValue}
                   onChange={(e) => setRepValue(e.target.value)}
                 ></textarea>
               </div>
 
-              <div className="comment-send">
+              <div className={cn("comment-send")}>
                 <button onClick={() => handleRepComment()}>Trả lời</button>
               </div>
-            </Col>
+            </div>
           ) : (
             ""
           )}
-        </>
+        </div>
       ))}
-      {/* <Col span={18}>
-            <div className="all-comment-info">
-              <div className="all-comment-info-name">
-                C
-              </div>
-              <strong>Cao Kha Hieu</strong>
-            </div>
-            <div className="all-comment-content">
-              Ip 11 này là loại đầy đủ phụ kiện hay loại mới ko pk đi kèm thế shop
-            </div>
-            <div className="all-comment-more">
-              <a className="all-comment-more-chat" onClick={() => showRepComment()}>
-                <WechatOutlined style={{color: '#e11b1e'}}/> <p> Trả lời</p>
-              </a>
-            </div>
-            <div className="all-comment-rep-list">
-              <div className="all-comment-rep-list-item">
-
-                <div className="all-comment-info">
-                  <div className="all-comment-info-name">
-                    C
-                  </div>
-                  <strong>Cao Kha Hieu</strong>
-                </div>
-
-                <div className="all-comment-content">
-                  Ip 11 này là loại đầy đủ phụ kiện hay loại mới ko pk đi kèm thế shop
-                </div>
-
-                <div className="all-comment-more">
-                  <a className="all-comment-more-chat">
-                    <WechatOutlined style={{color: '#e11b1e'}}/> <p> Trả lời</p>
-                  </a>
-                </div>
-                
-              </div>
-              <div className="all-comment-rep-list-item">
-
-                <div className="all-comment-info">
-                  <div className="all-comment-info-name">
-                    C
-                  </div>
-                  <strong>Cao Kha Hieu</strong>
-                </div>
-
-                <div className="all-comment-content">
-                  Ip 11 này là loại đầy đủ phụ kiện hay loại mới ko pk đi kèm thế shop
-                </div>
-
-                <div className="all-comment-more">
-                  <a className="all-comment-more-chat">
-                    <WechatOutlined style={{color: '#e11b1e'}}/> <p> Trả lời</p>
-                  </a>
-                </div>
-                
-              </div>
-            </div>
-          </Col>
-          {
-            repCmt.status === true ? (
-            <Col span={18} align='start' style={{ alignItems:'center'}}>
-            <div className="comment-area" style={{display: 'flex', alignItems:'center'}}>
-              <textarea placeholder='Xin mời để lại câu hỏi, CellphoneS sẽ trả lời trong 1h từ 8h - 22h mỗi ngày.' rows={10} cols={3}></textarea>
-            </div>
-            <div className="comment-send">
-              <button>Trả lời</button>
-            </div>
-          </Col>) : ''
-          } */}
     </div>
   );
 }

@@ -410,7 +410,7 @@ export const paginationProduct = expressAsyncHandler(async (req, res) => {
 });
 
 export const RateProduct = expressAsyncHandler(async (req, res) => {
-  const product = await ProductModel.findById(req.params.id);
+  const product = await ProductModel.findById(req.query.id);
   if (product) {
     const existsUser = product.reviews.find((x) => x.name === req.body.name);
     if (existsUser) {
@@ -438,7 +438,7 @@ export const RateProduct = expressAsyncHandler(async (req, res) => {
 
 export const CommentProduct = expressAsyncHandler(async (req, res) => {
   try {
-    const product = await ProductModel.findById(req.params.id);
+    const product = await ProductModel.findOne({ slug: req.params.slug});
     if (product) {
       product.comments.push(req.body);
       const updateCommentProduct = await product.save();
@@ -456,7 +456,7 @@ export const CommentProduct = expressAsyncHandler(async (req, res) => {
   } catch (err) {
     res
       .status(400)
-      .send({ status: 400, success: false, message: "product not found" });
+      .send({ status: 400, success: false, message: "product comment Falied" });
   }
 });
 
@@ -524,22 +524,23 @@ export const deleteThumnail = expressAsyncHandler(async (req, res) => {
 
 export const RepCommentProduct = expressAsyncHandler(async (req, res) => {
   try {
-    const product = await ProductModel.findById(req.params.id);
+  const product = await ProductModel.findOne({slug:req.params.slug});
     if (product) {
       const indexComment = product.comments.findIndex(
         (item) => item._id == req.body.idComment
       );
+      console.log('indexComment: ', indexComment);
       product.comments[indexComment].replies.push(req.body);
 
       await product.save();
       res.status(200).send({status: 200, success: true, data: product, message: "Rep comments successfully"});
     } else {
-      res.status(403).send({ status: 403, success: false, message: "product not found" });
+      res.status(403).send({ status: 403, success: false, message: "product not found1" });
     }
   } catch (err) {
     res
       .status(403)
-      .send({ status: 403, success: false, message: "product not found" });
+      .send({ status: 403, success: false, message: "product not found2" });
   }
 });
 

@@ -23,6 +23,7 @@ import { useState } from "react";
 import { prdCreateReviewReset } from "~/appRedux/reducerSlice/productSlice";
 import moment from "moment";
 import Title from "~/components/Title";
+import CommentProduct from "~/components/DetailProduct/CommentProduct";
 
 const cx = classNames.bind(styles);
 const desc = ["Rất tệ", "Tệ", "Bình thường", "Tốt", "Rất tốt"];
@@ -271,6 +272,9 @@ function DetailProductPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+              <div className={cx("boxComment")}>
+                <CommentProduct />
               </div>
             </div>
           </div>

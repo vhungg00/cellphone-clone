@@ -1,17 +1,16 @@
-import axios from "axios";
-import io from "socket.io-client";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import React, { useEffect, useState } from "react";
+import io from "socket.io-client";
 
-import TypeMessage from "./Components/TypeMessage/TypeMessage";
 import ListMessage from "./Components/ListMessage.js/ListMessage";
+import TypeMessage from "./Components/TypeMessage/TypeMessage";
 
 import { LineOutlined } from '@ant-design/icons';
 import cellphonesApi from "~/api/cellphonesApi";
 
+import { ChatBubble } from "@material-ui/icons";
 import classNames from "classnames/bind";
 import styles from './AppChat.module.scss';
-import { ChatBubble } from "@material-ui/icons";
 
 const cx = classNames.bind(styles);
 
@@ -24,7 +23,6 @@ function AppChat() {
   const [messages, setMessages] = useState([]);
   const [openChat, setOpenChat] = useState(false)
   const { data: userInfo } = useSelector((state) => state.auth.user);
-  console.log('messages: ', messages);
   useEffect(() => {
     const getAllMessageByConversation = async () => {
       const data  = await cellphonesApi.chatMessage(userInfo._id)
@@ -33,7 +31,7 @@ function AppChat() {
       }
     }
     getAllMessageByConversation()
-  }, []);
+  }, [userInfo._id]);
 
   useEffect(() => {
     socket = io(URLSOCKET);

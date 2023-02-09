@@ -46,6 +46,8 @@ export const API_ENDPOINT = {
   GET_ALL_SLIDER: '/slider',
   CREATE_SLIDER: '/slider/create',
   DELETE_SLIDER: '/slider/delete/id',
+  COMMENT_PRODUCT: '/products/comment',
+  REP_CMT_PRODUCT: '/products/rep/comment',
 };
 
 export const RULES_ANTD = {

@@ -20,6 +20,9 @@ import {
   prdCreateReviewSuccess,
   prdCreateReviewFailed,
   getAllPrdAdmin,
+  prdComment,
+  prdCommentFalied,
+  repCmtPrd
 } from "~/appRedux/reducerSlice/productSlice";
 import { logoutSuccess } from "../reducerSlice/isAuthSlice";
 
@@ -246,5 +249,34 @@ export const createProductReview = (productId, review) => async (dispatch) => {
       dispatch(logoutSuccess());
     }
     dispatch(prdCreateReviewFailed(message));
+  }
+};
+
+
+export const commentPrD = (slug, commentInfo) => async (dispatch) => {
+  try{
+    dispatch(prdCreateReviewPending())
+    const res = await cellphonesApi.commentPrd(slug, commentInfo);
+    if(res.status === 200 && res.success) {
+      dispatch(prdComment(res.data))
+    } else {
+      dispatch(prdCommentFalied())
+    }
+  } catch(err){
+    dispatch(prdCommentFalied())
+  }
+};
+
+export const repCommentProduct = (slug, comment) => async (dispatch) => {
+  try {
+    dispatch(prdCreateReviewPending())
+    const res = await cellphonesApi.repCommentPrd(slug, comment);
+    if(res.status === 200 && res.success) {
+      dispatch(repCmtPrd(res.data))
+    } else {
+      dispatch(prdCommentFalied())
+    }
+  } catch(err) {
+    dispatch(prdCommentFalied())
   }
 };

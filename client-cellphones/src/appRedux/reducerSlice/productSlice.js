@@ -10,6 +10,8 @@ const initialState = {
   type: {},
   selects: [],
   select: {},
+  prdWithComment: [],
+  repCmt: [],
   error: "",
   success: false,
   pages: 1,
@@ -128,6 +130,20 @@ const productSlice = createSlice({
       state.error = '';
       state.success = false;
     },
+    prdComment: (state, {payload}) => {
+      state.isLoading = false;
+      state.prdWithComment = payload;
+      state.success = true;
+    },
+    repCmtPrd: (state, {payload}) => {
+      state.isLoading = false;
+      state.repCmt = payload;
+      state.success = true;
+    },
+    prdCommentFalied: (state) => {
+      state.isLoading = false;
+      state.success = false;
+    }
   },
 });
 
@@ -155,7 +171,10 @@ export const {
   prdCreateReviewPending,
   prdCreateReviewSuccess,
   prdCreateReviewFailed,
-  prdCreateReviewReset
+  prdCreateReviewReset,
+  prdComment,
+  prdCommentFalied,
+  repCmtPrd
 } = actions;
 
 export default reducer;
