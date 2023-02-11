@@ -9,7 +9,7 @@ export const API_ENDPOINT = {
   GET_ALL_PRODUCT_ADMIN: "/products/all_product",
   GET_PRODUCT_BY_SLUG: "/products/slug",
   CREATE_PRODUCT: "/products/create",
-  UPDATE_PRODUCT: "/products/update/id",
+  UPDATE_PRODUCT: "/products/update/slug",
   DELETE_PRODUCT: "/products/delete/id",
 
   LOGIN: "/user/login",

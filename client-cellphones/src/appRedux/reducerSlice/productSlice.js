@@ -149,7 +149,11 @@ const productSlice = createSlice({
     prdCommentFalied: (state) => {
       state.isLoading = false;
       state.success = false;
-    }
+    },
+    deletePrdBySlug: (state, {payload}) => {
+      state.isLoading = false;
+      state.products = [];
+    },
   },
 });
 
@@ -181,7 +185,8 @@ export const {
   prdComment,
   prdCommentFalied,
   repCmtPrd,
-  pinCmtPrd
+  pinCmtPrd,
+  deletePrdBySlug
 } = actions;
 
 export default reducer;

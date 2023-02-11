@@ -300,12 +300,11 @@ export const getProductbyCategory = expressAsyncHandler(async (req, res) => {
 });
 
 export const UpdateProduct = expressAsyncHandler(async (req, res) => {
-  const find_product_by_id = await ProductModel.findById({_id: req.query.id});
+  const find_product_by_id = await ProductModel.findOne({slug: req.query.slug});
   await cloudinary.uploader.destroy(find_product_by_id.cloudinary_id);
   let result;
   if (req.file) {
     result = await cloudinary.uploader.upload(req.file.path);
-    console.log(result);
   }
   try {
     if (find_product_by_id) {

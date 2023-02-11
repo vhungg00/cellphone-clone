@@ -70,10 +70,10 @@ const cellphonesApi = {
         let res = await axiosCreate().post(API_ENDPOINT.CREATE_PRODUCT, payload);
         return res;
     },
-    updatePrd: async (id, payload, isAdmin) => {
-        let res = await axiosCreate().put(API_ENDPOINT.UPDATE, payload, {
+    updatePrd: async (slug, payload, isAdmin) => {
+        let res = await axiosCreate().put(API_ENDPOINT.UPDATE_PRODUCT, payload, {
             params: {
-                id
+                slug
             }
         }, isAdmin);
         return res;

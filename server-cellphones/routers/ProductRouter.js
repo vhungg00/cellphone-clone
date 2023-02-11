@@ -47,7 +47,7 @@ ProductRouter.post(
   AddProduct
 );
 ProductRouter.put(
-  "/update/:id",
+  "/update/:slug",
   protect,
   isAdmin,
   upload.single("image"),

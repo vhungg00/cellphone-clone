@@ -23,7 +23,7 @@ const routesAdmin = {
     appChat: '/app-chat',
     infoPrd: '/admin/product/create/info',
     create: '/admin/product/create',
-    update: '/admin/product/update',
+    update: '/admin/product/update/:slug',
     order: '/admin/order',
     orderDetail: '/admin/order/:id',
     slider: '/admin/slider',

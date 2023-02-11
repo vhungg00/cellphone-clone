@@ -12,15 +12,15 @@ import Loading from "~/components/Loading";
 import { formatPrice } from "~/untils";
 
 import classNames from "classnames/bind";
+import { useEffect } from "react";
 import config from "~/config";
 import styles from "./ProductList.module.scss";
 
 const cx = classNames.bind(styles);
 
 function ProductList() {
-
   const dispatch = useDispatch();
-
+ 
   const data = useSelector((state) => state.product.products);
   const pages = useSelector((state) => state.product.pages);
 
@@ -35,7 +35,10 @@ function ProductList() {
     await dispatch(getAllProducts());
   };
 
-  const temps = data.map((item, index) => ({
+  useEffect(() => {
+    dispatch(getAllProducts())
+  }, [dispatch])
+  const temps = data?.map((item, index) => ({
     id: item._id,
     stt: index +1,
     amount: item.amount,
@@ -99,7 +102,7 @@ function ProductList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/product/" + params.row.slug}>
+            <Link to={`/admin/product/update/${params.row.slug}`}>
               <button className="productListEdit">Edit</button>
             </Link>
             <DeleteOutline

@@ -5,8 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowBackOutlined } from "@material-ui/icons";
 import config from "~/config";
 
-import classNames from "classnames/bind";
-import styles from "./AdminProduct.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
   createProduct,
@@ -14,6 +12,8 @@ import {
   getAllTypeProduct,
 } from "~/appRedux/actions/productAction";
 import { getCate } from "~/appRedux/actions/cateAction";
+import styles from "./AdminProduct.module.scss";
+import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
 function AdminCreate(props) {

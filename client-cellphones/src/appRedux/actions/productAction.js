@@ -12,6 +12,7 @@ import {
   deleteSelectPrd,
   updateSelectPrd,
   createPrd,
+  updatePrd,
   deletePrd,
   ascendingPrd,
   descendingPrd,
@@ -23,7 +24,8 @@ import {
   prdComment,
   prdCommentFalied,
   repCmtPrd,
-  pinCmtPrd
+  pinCmtPrd,
+  deletePrdBySlug
 } from "~/appRedux/reducerSlice/productSlice";
 import { logoutSuccess } from "../reducerSlice/isAuthSlice";
 
@@ -198,6 +200,28 @@ export const createProduct = (payload) => async (dispatch, getState) => {
     console.log(e);
   }
 };
+
+export const removeProductById = () => async (dispatch) => {
+  await dispatch(deletePrdBySlug())
+};
+
+export const updateProduct = (slug, payload) => async (dispatch, getState) => {
+  await dispatch(getPrdPending());
+  try {
+    const {
+      auth: { user },
+    } = getState();
+    const { isAdmin = false } = user.data;
+    let res = await cellphonesApi.updatePrd(slug, payload, isAdmin);
+    if (res.status === 200 && res.success) {
+      await dispatch(updatePrd(res.data));
+    } else {
+      await dispatch(getPrdFail());
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
 
 export const deleteProduct = (id) => async (dispatch, getState) => {
   await dispatch(getPrdPending());

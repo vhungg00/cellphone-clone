@@ -19,6 +19,7 @@ import AllProduct from "~/components/AllProduct";
 import OrderPage from "~/pages/OrderPage";
 
 import AdminCreate from "~/components/Admin/components/AdminProduct/components/AdminCreate";
+import AdminUpdate from "~/components/Admin/components/AdminProduct/components/AdminUpdate";
 import DataFilterProduct from "~/components/Admin/components/AdminProduct/DataFilterProduct";
 import { OrderMain } from "~/components/Admin/pages/Order";
 import OrderDetailmain from "~/components/Admin/pages/Order/OrderDetailmain";
@@ -66,6 +67,7 @@ const adminRoutes = [
     { id: 9, path: config.routesAdmin.slider, component: AdSlider, privateRoute: PrivateRoute},
 
     { id: 10, path: config.routes.notFound, component: NotFound, privateRoute: PrivateRoute},
+    { id: 11, path: config.routesAdmin.update, component: AdminUpdate, privateRoute: PrivateRoute},
 ]
 export { clientRoutes, adminRoutes };
 
