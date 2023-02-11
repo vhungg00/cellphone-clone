@@ -46,6 +46,7 @@
 .Item {
 }
 .Info {
+  position: relative;
 }
 
 .avatar {
@@ -104,6 +105,17 @@
         color: #664d03;
     }
 }
+.comment-status {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4rem;
+  cursor: pointer;
+}
+.bgBoxRepLied {
+  background-color: #f0e1e1;
+}
+
 .action-icon{
     display: flex;
     align-items: center;

@@ -264,6 +264,10 @@ const cellphonesApi = {
         let res = await axiosCreate().post(`${API_ENDPOINT.REP_CMT_PRODUCT}/${slug}`, comment)
         return res;
     },
+    pinCommentPrd: async (slug, comment) => {
+        let res = await axiosCreate().post(`${API_ENDPOINT.PIN_CMT_PRODUCT}/${slug}`, comment)
+        return res;
+    }
 
 }
 

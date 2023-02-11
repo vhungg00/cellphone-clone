@@ -2,10 +2,10 @@ import { message } from "antd";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { repCommentProduct } from "~/appRedux/actions/productAction";
 import { getFirstCharacterUser } from "~/untils";
 import AllRepComment from "./AllRepComment";
 import { LockOutlined, PushpinOutlined, WechatOutlined } from "@ant-design/icons";
+import { pinCommentProduct, repCommentProduct } from "~/appRedux/actions/productAction";
 
 import className from "classnames/bind";
 import styles from "./Comment.module.scss";
@@ -42,10 +42,8 @@ function AllComment() {
   };
 
   const PinComment = (comment) => {
-    // const UpdateComment = { ...comment, status: "pin" };
-    // console.log(UpdateComment);
-
-    // dispatch(pinCommentProduct(id, UpdateComment));
+    const UpdateComment = { ...comment, status: "pin" };
+    dispatch(pinCommentProduct(slug, UpdateComment));
   };
 
   return (
@@ -74,9 +72,9 @@ function AllComment() {
               </div>
 
               {user?.isAdmin ? (
-                <div className="comment-status">
+                <div className={cn("comment-status")}>
                   <div
-                    className="comment-status-pin"
+                    className={cn("comment-status-pin")}
                     onClick={() => PinComment(comment)}
                   >
                     {
@@ -85,12 +83,12 @@ function AllComment() {
                   </div>
                 </div>
               ) : (
-                <div className="comment-status">
+                <div className={cn("comment-status")}>
                   <div
-                    className="comment-status-pin"
+                    className={cn("comment-status-pin")}
                   >
                     {
-                      comment.status === 'pin' ? (<PushpinOutlined></PushpinOutlined>) : ''
+                      comment.status === 'pin' ? (<LockOutlined />) : ''
                     }
                   </div>
                 </div>

@@ -37,7 +37,7 @@ ProductRouter.post("/rate/:id", RateProduct);
 ProductRouter.post("/filter/random", filterProductByRandomField);
 
 ProductRouter.post("/comment/:slug", CommentProduct);
-ProductRouter.post("/pin/comment/:id", PinCommentProduct);
+ProductRouter.post("/pin/comment/:slug", PinCommentProduct);
 ProductRouter.post("/rep/comment/:slug", RepCommentProduct);
 ProductRouter.post(
   "/create",

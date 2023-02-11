@@ -30,7 +30,7 @@ function AllRepComment(props) {
               
             </div>
 
-            <div className={cn('boxRep')}>
+            <div className={cn('boxRep', 'bgBoxRepLied')}>
               <div className={cn('content')}>{repComment.content}</div>
               <div className={cn('more-replied')}>
                 <button

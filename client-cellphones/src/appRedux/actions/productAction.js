@@ -22,7 +22,8 @@ import {
   getAllPrdAdmin,
   prdComment,
   prdCommentFalied,
-  repCmtPrd
+  repCmtPrd,
+  pinCmtPrd
 } from "~/appRedux/reducerSlice/productSlice";
 import { logoutSuccess } from "../reducerSlice/isAuthSlice";
 
@@ -277,6 +278,21 @@ export const repCommentProduct = (slug, comment) => async (dispatch) => {
       dispatch(prdCommentFalied())
     }
   } catch(err) {
+    dispatch(prdCommentFalied())
+  }
+};
+
+export const pinCommentProduct = (slug, comment) => async (dispatch, getState) => {
+  try {
+    dispatch(prdCreateReviewPending())
+    const res = await cellphonesApi.pinCommentPrd(slug, comment);
+    if(res.status === 200 && res.success) {
+      dispatch(pinCmtPrd(res));
+    }
+    else {
+      dispatch(prdCommentFalied())
+    }
+  } catch (error) {
     dispatch(prdCommentFalied())
   }
 };

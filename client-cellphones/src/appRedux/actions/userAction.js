@@ -70,7 +70,6 @@ export const updateUserProfile = (user) => async (dispatch) => {
 export const register = (payload) => async (dispatch) => {
   await dispatch(userPending());
   const res = await cellphonesApi.register(payload);
-  console.log("res: ", res);
   if (res.status === 200 && res.success) {
     await dispatch(userSuccess(res));
     await localStorage.setItem("AUTH_INFO", JSON.stringify(res.data) || "");

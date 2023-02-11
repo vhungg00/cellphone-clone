@@ -48,6 +48,7 @@ export const API_ENDPOINT = {
   DELETE_SLIDER: '/slider/delete/id',
   COMMENT_PRODUCT: '/products/comment',
   REP_CMT_PRODUCT: '/products/rep/comment',
+  PIN_CMT_PRODUCT: '/products/pin/comment',
 };
 
 export const RULES_ANTD = {

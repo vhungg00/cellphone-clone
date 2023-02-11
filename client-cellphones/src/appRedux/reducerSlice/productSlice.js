@@ -12,6 +12,7 @@ const initialState = {
   select: {},
   prdWithComment: [],
   repCmt: [],
+  pinCmt: [],
   error: "",
   success: false,
   pages: 1,
@@ -140,6 +141,11 @@ const productSlice = createSlice({
       state.repCmt = payload;
       state.success = true;
     },
+    pinCmtPrd: (state, {payload}) => {
+      state.isLoading = false;
+      state.pinCmt = payload;
+      state.success = true;
+    },
     prdCommentFalied: (state) => {
       state.isLoading = false;
       state.success = false;
@@ -174,7 +180,8 @@ export const {
   prdCreateReviewReset,
   prdComment,
   prdCommentFalied,
-  repCmtPrd
+  repCmtPrd,
+  pinCmtPrd
 } = actions;
 
 export default reducer;

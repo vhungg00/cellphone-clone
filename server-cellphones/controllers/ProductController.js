@@ -545,8 +545,7 @@ export const RepCommentProduct = expressAsyncHandler(async (req, res) => {
 });
 
 export const PinCommentProduct = expressAsyncHandler(async (req, res) => {
-  console.log(req.body, req.params.id);
-  const product = await ProductModel.findById(req.params.id);
+  const product = await ProductModel.findOne({slug:req.params.slug});
   if (product) {
     const indexComment = product.comments.findIndex(
       (item) => item._id == req.body.idComment
@@ -555,7 +554,7 @@ export const PinCommentProduct = expressAsyncHandler(async (req, res) => {
     PinComment(product.comments, indexComment, 0);
 
     await product.save();
-    res.send(product);
+    res.status(200).send({status: 200, success: true, data: product, message: "Pin comments successfully"});
   } else {
     res.status(400).send({ message: "product not found" });
   }
