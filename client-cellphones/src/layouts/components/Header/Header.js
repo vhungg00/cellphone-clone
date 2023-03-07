@@ -15,6 +15,7 @@ import Search from "~/layouts/components/Search"
 
 import { getFirstCharacterUser } from '~/untils';
 import { LogOutUser } from '~/appRedux/actions/userAction';
+import { useGTMDispatch } from "@elgorditosalsero/react-gtm-hook";
 
 import 'tippy.js/dist/tippy.css';
 import styles from "./Header.module.scss";
@@ -29,6 +30,13 @@ function Header() {
   const userName = user?.name ? user?.name : [];
   const isAdmin = user?.isAdmin;
 
+  const sendDataToGTM = useGTMDispatch();
+  const handleClick = () => {
+    sendDataToGTM({
+      event: "tst_click",
+      category: "Button"
+    });
+  };
   const dispatch = useDispatch()
   const handleLogOutClick = async () => {
     await dispatch(LogOutUser())
@@ -79,7 +87,7 @@ function Header() {
                 <div className="header__action d-flex justify-content-center justify-content-md-end">
                   <ul>
                     <li>
-                      <a href="true">SP Yêu thích</a>
+                      <a onClick={() => handleClick()} href="true">SP Yêu thích</a>
                     </li>
                     <li>
                       {isLogin ? (<DropdownC menu={menu} placement="bottomRight">
