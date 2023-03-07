@@ -117,6 +117,7 @@ function Header() {
                     <div className="header__hotline-icon">
                       <i className="fal fa-headset" />
                     </div>
+                    <button onClick={() => handleClick()}>Click</button>
                     <a href="tel:06-900-6789-00" className="header__hotline-info">
                       <span>Liên hệ</span>
                       <h6>06-900-6789-00</h6>
