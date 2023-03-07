@@ -31,12 +31,9 @@ function Header() {
   const isAdmin = user?.isAdmin;
 
   const sendDataToGTM = useGTMDispatch();
-  const handleClick = () => {
-    sendDataToGTM({
+  const handleClick = () => sendDataToGTM({
       event: "tst_click",
-      category: "Button"
-    });
-  };
+      category: "Button" });
   const dispatch = useDispatch()
   const handleLogOutClick = async () => {
     await dispatch(LogOutUser())
@@ -87,7 +84,7 @@ function Header() {
                 <div className="header__action d-flex justify-content-center justify-content-md-end">
                   <ul>
                     <li>
-                      <a onClick={() => handleClick()} href="true">SP Yêu thích</a>
+                      <a href="true">SP Yêu thích</a>
                     </li>
                     <li>
                       {isLogin ? (<DropdownC menu={menu} placement="bottomRight">
