@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
-import config from "~/config";
+import { routes } from "~/config";
 
 import { LeftOutlined } from "@ant-design/icons";
 import { CartEmpty } from "~/components/Icons";
@@ -25,7 +25,7 @@ function Cart() {
   );
 
   const handleRedirect = useCallback(() => {
-    isLogin ? navigate(config.routes.shipping):
+    isLogin ? navigate(routes.shipping):
     navigate("/login?redirect=shipping")
   }, [navigate, isLogin])
 
@@ -34,7 +34,7 @@ function Cart() {
     <div className={cx("wrapper")}>
       <Title title="CellphoneS Cart" />
       <div className={cx("header")}>
-        <Link to={config.routes.home} className={cx("back")}>
+        <Link to={routes.home} className={cx("back")}>
           <LeftOutlined />
           <p>Trở về</p>
         </Link>
@@ -50,7 +50,7 @@ function Cart() {
       )}
       {cartItems && cartItems.length <= 0 ? (
         <div className={cx("empty_link")}>
-          <Link to={config.routes.home}>Quay lại trang chủ</Link>
+          <Link to={routes.home}>Quay lại trang chủ</Link>
         </div>
       ) : (
         
@@ -64,7 +64,7 @@ function Cart() {
               onClick={handleRedirect}
             >Tiến hành đặt hàng</button>
           </div>
-          <Link to={config.routes.home} className={cx("link", "mt-2")}>
+          <Link to={routes.home} className={cx("link", "mt-2")}>
             Chọn thêm sản phẩm khác{" "}
           </Link>
         </div>

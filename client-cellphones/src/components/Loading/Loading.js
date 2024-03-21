@@ -3,7 +3,7 @@ import React from "react";
 import classNames from "classnames/bind";
 import styles from './Loading.module.scss';
 const cx = classNames.bind(styles);
-const LoadingConfig = ({ title = "Waiting..." }) => {
+const LoadingConfig = ({ title = "" }) => {
   return (
     <div className={cx("loadingConfig")}>
       <Spin size="large" />

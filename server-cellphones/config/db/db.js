@@ -11,7 +11,7 @@ async function connectDB(){
             useUnifiedTopology: true,
             useCreateIndex: true,
         })
-        console.log("Connected to database: " + url)
+        console.info("Connected to database")
     } catch (error) {
         console.log(error)
     }

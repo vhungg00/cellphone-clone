@@ -9,7 +9,7 @@ import { getCate } from "~/appRedux/actions/cateAction";
 import classNames from 'classnames/bind';
 import styles from './Category.module.scss';
 import { AppsOutlined } from "@material-ui/icons";
-import config from "~/config";
+import {routes} from "~/config";
 
 const cx = classNames.bind(styles);
 function Categoryweb() {
@@ -37,7 +37,7 @@ function Categoryweb() {
               >
                 <ul>
                   <li>
-                    <Link to={config.routes.allProduct}>
+                    <Link to={routes.allProduct}>
                       <AppsOutlined />
                       <span style={{display: 'block', marginLeft: '0.6rem'}}>Tất cả sản phẩm</span><i className="far fa-angle-down"></i>
                     </Link>

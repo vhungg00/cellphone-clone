@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import config from "~/config";
+import { routesAdmin } from "~/config";
 
 import { ArrowBackOutlined } from "@material-ui/icons";
 import classNames from "classnames/bind";
@@ -98,7 +98,7 @@ function AdminUpdate(props) {
   return (
     <div className={cx("create_wrapper")}>
       <h4 className={cx("heading")}>
-        <Link to={config.routesAdmin.listProduct}>
+        <Link to={routesAdmin.listProduct}>
           {" "}
           <ArrowBackOutlined /> <span>Back</span>
         </Link>

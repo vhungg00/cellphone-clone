@@ -206,6 +206,44 @@ export const AddProduct = expressAsyncHandler(async (req, res) => {
   }
 });
 
+export const updateThumnail = expressAsyncHandler(async (req, res) => {
+  const product = await ProductModel.findById(req.params.id);
+  const uploader = async (path) =>
+    await cloudinary.uploader.upload(path, "Images");
+  if (product) {
+    const files = req.files;
+    for (const file of files) {
+      const { path } = file;
+      const newPath = await uploader(path);
+      console.log(newPath);
+      if (product.images.length > 10) {
+        res.status(400).send({
+          status: 400,
+          success: false,
+          messgage: "Quá số lượng ảnh tải lên",
+        });
+        break;
+      } else {
+        product.images.push({
+          url: newPath.secure_url,
+          cloudinary_id: newPath.public_id,
+        });
+      }
+    }
+    const update = await product.save();
+    res.status(200).send({
+      status: 200,
+      success: true,
+      message: "update successfully",
+      data: update,
+    });
+  } else {
+    res
+      .status(403)
+      .send({ status: 403, success: false, message: "product not found" });
+  }
+});
+
 export const searchProduct = expressAsyncHandler(async (req, res) => {
   const perPage = 5;
   let page = parseInt(req.query.page) || 1;
@@ -456,44 +494,6 @@ export const CommentProduct = expressAsyncHandler(async (req, res) => {
     res
       .status(400)
       .send({ status: 400, success: false, message: "product comment Falied" });
-  }
-});
-
-export const updateThumnail = expressAsyncHandler(async (req, res) => {
-  const product = await ProductModel.findById(req.params.id);
-  const uploader = async (path) =>
-    await cloudinary.uploader.upload(path, "Images");
-  if (product) {
-    const files = req.files;
-    for (const file of files) {
-      const { path } = file;
-      const newPath = await uploader(path);
-      console.log(newPath);
-      if (product.images.length > 10) {
-        res.status(400).send({
-          status: 400,
-          success: false,
-          messgage: "Quá số lượng ảnh tải lên",
-        });
-        break;
-      } else {
-        product.images.push({
-          url: newPath.secure_url,
-          cloudinary_id: newPath.public_id,
-        });
-      }
-    }
-    const update = await product.save();
-    res.status(200).send({
-      status: 200,
-      success: true,
-      message: "update successfully",
-      data: update,
-    });
-  } else {
-    res
-      .status(403)
-      .send({ status: 403, success: false, message: "product not found" });
   }
 });
 

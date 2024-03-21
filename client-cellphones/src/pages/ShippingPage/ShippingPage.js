@@ -7,7 +7,7 @@ import { LeftOutlined } from '@ant-design/icons';
 import { Form, Input, message, Select, Spin } from 'antd';
 
 import cellphonesApi from '~/api/cellphonesApi';
-import config from '~/config';
+import { routes } from '~/config';
 import { RULES_ANTD, sortPrioritize } from '~/constants';
 
 import classNames from 'classnames/bind';
@@ -97,7 +97,7 @@ function ShippingPage() {
         ward: nameWard,
     }
     await dispatch(cartSaveAddress(newValue));
-    navigate(config.routes.payment);
+    navigate(routes.payment);
   }
 
   const onFinishFailed = (info) => {
@@ -109,7 +109,7 @@ function ShippingPage() {
     <div className={cx("wrapper")}>
       <Title title="CellphoneS Shiping" />
       <div className={cx("header")}>
-        <Link to={config.routes.home} className={cx("back")}>
+        <Link to={routes.home} className={cx("back")}>
           <LeftOutlined />
           <p>Trở về</p>
         </Link>

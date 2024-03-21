@@ -1,40 +1,52 @@
 import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { adminRoutes, clientRoutes } from "./routes/Routes";
+import { adminRoutes, clientRoutes, PrivateRoutes } from "./routes/Routes";
 
 import ResetScroll from "./components/ResetScroll";
 import DefaultLayout from "./layouts";
 import AdminLayout from "./layouts/AdminLayout";
+import { routesAdmin } from '~/config';
 
 import "./App.css";
 import { getAllOrders } from "./appRedux/actions/orderAction";
 import { getAllProductAdmin } from "./appRedux/actions/productAction";
+
+import Admin from "~/pages/Admin";
+
 function App() {
   const { data: authUser } = useSelector(state => state.auth.user);
   const dispatch = useDispatch();
   useEffect(() => {
     const fetchApi = () => {
-      if(authUser && authUser?.isAdmin) {
-       dispatch(getAllProductAdmin())
-       dispatch(getAllOrders());
+      if (authUser && authUser?.isAdmin) {
+        dispatch(getAllProductAdmin())
+        dispatch(getAllOrders());
       }
     }
     fetchApi();
   }, [dispatch, authUser])
   return (
     <Router>
-      <div className="App">
-        <ResetScroll></ResetScroll>
+      <ResetScroll />
+      <div>
         <Routes>
-          { authUser?.isAdmin ? adminRoutes.map((route, id) => {
+
+          {/* Admin router */}
+
+          <Route element={<PrivateRoutes type={1} />}>
+            <Route path={routesAdmin.home} element={<Admin />} />
+          </Route>
+
+
+          {authUser?.isAdmin ? adminRoutes.map((route, id) => {
             const LayoutAdmin = AdminLayout;
             let Page = route.component;
             return (
               <Route
                 key={id}
                 path={route.path}
-                element= {
+                element={
                   <LayoutAdmin>
                     <Page />
                   </LayoutAdmin>

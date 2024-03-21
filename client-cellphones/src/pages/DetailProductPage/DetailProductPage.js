@@ -13,7 +13,7 @@ import {
 } from "~/appRedux/actions/productAction";
 import { addCart } from "~/appRedux/actions/cartAction";
 import { message, Rate } from "antd";
-import config from "~/config";
+import { routes } from "~/config";
 import Rating from "~/components/Rating";
 
 import classNames from "classnames/bind";
@@ -85,7 +85,7 @@ function DetailProductPage() {
     navigate(`/cart/${slug}}`);
   };
   const handleRedirect = useCallback(() => {
-    navigate(`${config.routes.login}?redirect=product-detail/${slug}`);
+    navigate(`${routes.login}?redirect=product-detail/${slug}`);
   }, [slug, navigate]);
 
   const submitHandler = async (e) => {

@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 
-import config from "~/config";
+import {routesAdmin} from "~/config";
 import Loading from "~/components/Loading";
 import OrderDetailInfo from "./OrderDetailInfo";
 import Message from "~/components/LoadingError/Error";
@@ -31,7 +31,7 @@ const OrderDetailmain = () => {
   return (
     <section className="content-main">
       <div className="content-header">
-        <Link to={config.routesAdmin.order} className="btn btn-dark text-white">
+        <Link to={routesAdmin.order} className="btn btn-dark text-white">
           Back To Orders
         </Link>
       </div>

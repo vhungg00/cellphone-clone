@@ -9,7 +9,7 @@ import AllComment from "./AllComment";
 import { IconPaperPlane } from "../Icons";
 import { getPrdDetailBySlug } from "~/appRedux/actions/productAction";
 import Message from "../LoadingError/Error";
-import config from "~/config";
+import { routes } from "~/config";
 
 import className from "classnames/bind";
 import styles from "./Comment.module.scss";
@@ -40,7 +40,7 @@ function CommentProduct() {
   }, [dispatch, slug]);
 
   const handleRedirect = useCallback(() => {
-    navigate(`${config.routes.login}?redirect=product-detail/${slug}`);
+    navigate(`${routes.login}?redirect=product-detail/${slug}`);
   }, [slug, navigate]);
 
   return (

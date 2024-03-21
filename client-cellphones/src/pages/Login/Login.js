@@ -4,14 +4,12 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserLogin } from "~/appRedux/actions/userAction";
-import Loading from "~/components/Loading";
 import { RULES_ANTD } from "~/constants";
 
 function Login() {
     const location = useLocation()
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    let loading = useSelector((state) => state.auth.isLoading)
     const url = location.search ? location.search.split("=")[1] : "";
     const userLogin = useSelector((state) => state.auth);
     const { user, isLogin } = userLogin;
@@ -24,7 +22,6 @@ function Login() {
         const res  = await dispatch(UserLogin(values));
         if(res.status === 200 && res.success) {
           message.success('Đăng nhập thành công')
-          loading = false;
         }
         else {
           message.error('Tài khoản và mật khẩu không chính xác')
@@ -35,7 +32,6 @@ function Login() {
     }
   return (
     <section className="login-area pb-100">
-      {loading && <Loading />}
       <div className="container">
         <div className="row">
           <div className="col-lg-6 offset-lg-3">

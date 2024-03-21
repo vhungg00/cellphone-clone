@@ -1,5 +1,5 @@
 :root {
-  --font-family: sans-serif;
+  --font-family: 'Poppins', sans-serif;
   --primary: #d70018;
   --black: #000;
   --white: #fff;
@@ -30,17 +30,7 @@ body {
   line-height: 1.5;
   overflow-y: overlay;
 }
-body::-webkit-scrollbar {
-  width: 0.8rem;
-}
 
-body::-webkit-scrollbar-thumb {
-  background-color: #a6a6a6;
-  border-radius: 2rem;
-}
-body::-webkit-scrollbar-track {
-  background-color: #f0f0f0;
-}
 button,
 input,
 textarea {

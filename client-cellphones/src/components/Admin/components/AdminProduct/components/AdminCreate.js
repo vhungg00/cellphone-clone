@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowBackOutlined } from "@material-ui/icons";
-import config from "~/config";
+import { routesAdmin } from "~/config";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -83,13 +83,9 @@ function AdminCreate(props) {
 
   return (
     <div className={cx("create_wrapper")}>
-      <h4 className={cx("heading")}>
-        <Link to={config.routesAdmin.listProduct}>
-          {" "}
-          <ArrowBackOutlined /> <span>Back</span>
-        </Link>
-        Create Product
-      </h4>
+      <div className={cx("heading")}>
+        <Link to={routesAdmin.listProduct}><ArrowBackOutlined /> <span>Back to list product</span></Link>
+      </div>
       <div className={cx("inner")}>
         <form
           className={cx("create_form")}

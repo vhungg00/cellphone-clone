@@ -15,7 +15,7 @@ import {
 } from "@material-ui/icons";
 import classNames from "classnames/bind";
 import { NavLink } from "react-router-dom";
-import config from "~/config";
+import { routesAdmin } from "~/config";
 import styles from "./SideBar.module.scss";
 
 const cx = classNames.bind(styles);
@@ -28,7 +28,7 @@ export default function SideBar() {
           <h3 className={cx("sidebarTitle")}>Dashboard</h3>
           <ul className={cx("sidebarList")}>
             <NavLink
-              to={config.routesAdmin.home}
+              to={routesAdmin.home}
               className={(nav) => cx("link", { active: nav.isActive })}
             >
               <li className={cx("sidebarListItem")}>
@@ -37,7 +37,7 @@ export default function SideBar() {
               </li>
             </NavLink>
             <NavLink
-              to={config.routesAdmin.order}
+              to={routesAdmin.order}
               className={(nav) => cx("link", { active: nav.isActive })}
             >
               <li className={cx("sidebarListItem")}>
@@ -55,7 +55,7 @@ export default function SideBar() {
               </li>
             </NavLink>
             <NavLink
-              to={config.routesAdmin.listProduct}
+              to={routesAdmin.listProduct}
               className={(nav) => cx("link", { active: nav.isActive })}
             >
               <li className={cx("sidebarListItem")}>
@@ -64,7 +64,7 @@ export default function SideBar() {
               </li>
             </NavLink>
             <NavLink
-              to={config.routesAdmin.appChat}
+              to={routesAdmin.appChat}
               className={(nav) => cx("link", { active: nav.isActive })}
             >
               <li className={cx("sidebarListItem")}>
@@ -73,7 +73,7 @@ export default function SideBar() {
               </li>
             </NavLink>
             <NavLink
-              to={config.routesAdmin.slider}
+              to={routesAdmin.slider}
               className={(nav) => cx("link", { active: nav.isActive })}
             >
               <li className={cx("sidebarListItem")}>

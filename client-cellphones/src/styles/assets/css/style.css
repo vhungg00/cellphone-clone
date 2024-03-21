@@ -30,38 +30,6 @@
 /*----------------------------------------*/
 /*  01. Theme default CSS
 /*----------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Rubik", sans-serif;
-  font-size: 13px;
-  font-weight: normal;
-  color: #666;
-  line-height: 24px;
-}
-
-a {
-  text-decoration: none;
-}
-
-.w-img img {
-  width: 100%;
-}
-
-.m-img img {
-  max-width: 100%;
-}
-
-input {
-  outline: none;
-}
-
 a,
 .btn,
 button,

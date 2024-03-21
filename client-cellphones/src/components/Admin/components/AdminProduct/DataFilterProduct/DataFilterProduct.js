@@ -2,7 +2,7 @@
 import { ArrowBackOutlined } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
-import config from "~/config";
+import {routesAdmin} from "~/config";
 import CreateNewType from "./components/CreateNewType";
 import AllTypeProduct from "./components/AllTypeProduct";
 
@@ -18,7 +18,7 @@ const DataFilterProduct = () => {
   return (
     <div className={cx("wrapper")}>
       <h4 className={cx("heading")}>
-       <Link to={config.routesAdmin.listProduct}> <ArrowBackOutlined/> <span>Back</span></Link>
+       <Link to={routesAdmin.listProduct}> <ArrowBackOutlined/> <span>Back</span></Link>
         Update detail product
       </h4>
       <div className={cx("inner")}>

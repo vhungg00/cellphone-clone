@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import images from "~/assets/images";
-import config from "~/config";
+import { routes } from "~/config";
 
 const NotFound = () => {
   return (
@@ -14,7 +14,7 @@ const NotFound = () => {
             alt="Not-found"
           />
           <button className="col-md-3 col-sm-6 col-12 btn btn-success mt-5">
-            <Link to={config.routes.home} className="text-white text-decoration-none">
+            <Link to={routes.home} className="text-white text-decoration-none">
               Trang chủ
             </Link>
           </button>

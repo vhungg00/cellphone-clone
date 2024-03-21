@@ -4,14 +4,14 @@ import styles from './Topnav.module.scss';
 import { NotificationOutlined, SettingOutlined } from "@ant-design/icons";
 import images from "~/assets/images";
 import { Link } from "react-router-dom";
-import config from "~/config";
+import {routes} from "~/config";
 const cx = classNames.bind(styles);
 export default function Topbar() {
   return (
     <div className={cx("topbar")}>
       <div className={cx("topbarWrapper")}>
         <div className={cx("topLeft")}>
-          <Link to={config.routes.home} className={cx("logo")}>
+          <Link to={routes.home} className={cx("logo")}>
             <img src={images.logo} alt="logo" />
           </Link>
         </div>

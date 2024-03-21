@@ -13,7 +13,7 @@ import { formatPrice } from "~/untils";
 
 import classNames from "classnames/bind";
 import { useEffect } from "react";
-import config from "~/config";
+import { routesAdmin } from "~/config";
 import styles from "./ProductList.module.scss";
 
 const cx = classNames.bind(styles);
@@ -117,16 +117,16 @@ function ProductList() {
   return (
     <div className={cx("wrapper")}>
       <div className={cx("action")}>
-        <Link to={config.routesAdmin.create}>
+        <Link to={routesAdmin.create}>
           <div className={cx("iconC")}>
             <AppstoreAddOutlined />
-            <span>Create</span>
+            <span>Create a product</span>
           </div>
         </Link>
-        <Link to={config.routesAdmin.infoPrd}>
+        <Link to={routesAdmin.infoPrd}>
           <div className={cx("iconC", "detail")}>
             <ToolOutlined />
-            <span>Detail product</span>
+            <span>Create detail product</span>
           </div>
         </Link>
       </div>
